@@ -66,6 +66,13 @@ p {
   font-family: mundial-narrow-variable, sans-serif;
 }
 
+a {
+  font-size: 1.125rem;
+  font-variation-settings: "wght" 200;
+  line-height: 1.5;
+  font-family: mundial-narrow-variable, sans-serif;
+}
+
 h1 .accentfont {
   font-size: 5.5rem;
   font-family: altesse-std-64pt, sans-serif;
