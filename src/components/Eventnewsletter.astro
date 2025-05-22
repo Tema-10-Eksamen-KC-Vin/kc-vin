@@ -1,0 +1,59 @@
+---
+
+---
+
+<section>
+  <div class="newsletter_box">
+    <h2>Tilmeld dig nyhedsbrevet og hold dig opdateret på fremtidige oplevelser</h2>
+    <p>Tilmeld dig nu og oplev en smagfuld aften, hvor unikke vine præsenteres i de bedste rammer - perfekt til både nysgerrige og mere erfarne vinelskere.</p>
+    <form>
+      <input type="text" id="email" name="Email" placeholder="@Email" style="border-radius: 7.5px;" />
+      <button type="button" id="button">Tilmeld</button>
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox" id="label">Ved at tilmelde dig vores nyhedsbrev, erklærer du dig enig i vores Privatlivspolitik og giver samtykke til at modtage opdateringer og markedsføring på e-mail, sms, sociale medier og andre digitale platforme fra Kahlenberg & Christianse om nyheder, information, fordele, tilbud og events. Du kan altid tilbagekalde dit samtykke.</label>
+    </form>
+  </div>
+</section>
+
+<style>
+  section {
+    background-image: url(/image.png);
+    height: 750px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .newsletter_box {
+    padding-inline: 300px;
+    padding-top: 250px;
+    color: var(--color-bg-beige);
+  }
+  form {
+    display: grid;
+    grid-template-columns: 0.15fr 4fr 0fr 0fr 1fr;
+    grid-template-rows: 2fr 2.5fr;
+    gap: 10px;
+  }
+
+  #email {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  #button {
+    grid-column: 5/6;
+    grid-row: span 1;
+  }
+
+  #checkbox {
+    grid-column: span 1;
+    grid-row: 2/3;
+  }
+
+  #label {
+    grid-column: 2/6;
+    grid-row: 2/3;
+  }
+</style>
