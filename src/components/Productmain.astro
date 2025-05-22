@@ -1,0 +1,20 @@
+---
+
+---
+
+<div><slot /></div>
+
+<style>
+  div {
+    background: #411415;
+    width: 100%;
+  }
+  @media screen and (min-width: 800px) {
+    div {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 2fr;
+      padding-bottom: 150px;
+    }
+  }
+</style>

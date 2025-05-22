@@ -1,0 +1,19 @@
+---
+const { areas } = Astro.props;
+import { Image } from "astro:assets";
+import placeholderWinearea from "../assets/placeholderWinearea.png";
+---
+
+<div>
+  <h2>Områder</h2>
+  <p>{areas}</p>
+  <Image src={placeholderWinearea} alt="" />
+</div>
+
+<style>
+  @media screen and (min-width: 800px) {
+    div {
+      order: 1;
+    }
+  }
+</style>

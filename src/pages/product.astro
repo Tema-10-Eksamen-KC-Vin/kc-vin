@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Productheader from "../components/Productheader.astro";
+import Productmain from "../components/Productmain.astro";
+import Productmainsection from "../components/Productmainsection.astro";
+import Udvalgtevine from "../components/Udvalgtevine.astro";
+import Winecard from "../components/Winecard.astro";
+import Winearea from "../components/Winearea.astro";
+import Productsection from "../components/Productsection.astro";
+---
+
+<Layout>
+  <NavBar />
+  <Productheader />
+  <Productmain>
+    <Productmainsection producentNavn="Giovanni Rosso" desc="Giovanni Rosso er en familieejet vingård i hjertet af Barolo-regionen. Med over 100 års erfaring producerer de nogle af Italiens fineste vine med fokus på traditionelle metoder og terroir." special1="Barolo" special2="Barbera d'Alba" special3="Langhe Nebbiolo" />
+    <Winearea areas="Piemonte, Sicilien" />
+    <Udvalgtevine title="Udvalgte vine fra producenten">
+      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+    </Udvalgtevine>
+  </Productmain>
+  <Productsection />
+  <Footer />
+</Layout>
