@@ -59,9 +59,11 @@ h6 {
   font-size: 1.25rem;
 }
 
-p {
+p,
+span,
+button {
   font-size: 1.125rem;
-  font-variation-settings: "wght" 400;
+  font-variation-settings: "wght" 200;
   line-height: 1.5;
   font-family: mundial-narrow-variable, sans-serif;
 }
