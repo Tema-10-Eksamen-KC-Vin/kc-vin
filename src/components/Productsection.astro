@@ -9,6 +9,7 @@ import image7 from "../assets/image7.png";
     <div class="textsection">
       <h2>Kom på en kulinarisk smagsoplevelse - tilmeld dig vores vinsmagninger her</h2>
       <p>Velkommen til en verden af raffinement og sanselig nydelse. Vores eksklusive vinsmagningsarrangementer byder på nøje udvalgte vine præsenteret af erfarne sommelierer i stemningsfulde og elegante omgivelser. En uforglemmelig oplevelse for den kræsne vinelsker, der ønsker det ypperste inden for smag, viden og atmosfære</p>
+      <slot />
     </div>
   </div>
 </div>
@@ -27,6 +28,7 @@ import image7 from "../assets/image7.png";
   h2,
   p {
     color: var(--color-white);
+    margin-bottom: 37px;
   }
   img {
     display: none;
@@ -46,10 +48,11 @@ import image7 from "../assets/image7.png";
       background: none;
     }
     img {
-      display: block;
-      width: 629px;
-      height: auto;
+      display: inline-block;
+      width: auto;
+      height: 100%;
       justify-self: center;
+      object-fit: cover;
     }
   }
 </style>
