@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import calender from "../assets/Kalender.svg";
+import clock from "../assets/Clock.svg";
+import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
+const { date } = Astro.props;
+const { time } = Astro.props;
+const { price } = Astro.props;
+---
+
+<div class="background">
+  <div class="grid1">
+    <div class="grid2">
+      <div class="flex">
+        <Image src={calender} alt="" />
+        <h4>{date}</h4>
+      </div>
+      <h4>Pris pr. person</h4>
+      <div class="flex">
+        <Image src={clock} alt="" />
+        <h4>{time}</h4>
+      </div>
+      <h4>{price},-</h4>
+    </div>
+    <div class="flex2">
+      <Udvalgtevinebutton link="" linktekst="Book nu" />
+      <Udvalgtevinebutton color="abeige" link="" linktekst="Kontakt os" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .flex {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+  }
+  .flex2 {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    grid-row: 1 / 2;
+    align-items: center;
+  }
+  .background {
+    width: 100%;
+    height: 265px;
+    background: var(--color-bg-red);
+    color: var(--color-white);
+    display: grid;
+  }
+  .grid1 {
+    display: grid;
+    max-width: 1340px;
+    width: 100%;
+    margin: auto;
+    grid-template-columns: 2fr 1fr;
+    grid-row: 1fr;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row: 1 / 2;
+    gap: 27px;
+  }
+</style>

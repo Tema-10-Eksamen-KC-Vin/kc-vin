@@ -1,15 +1,26 @@
 ---
 const { link } = Astro.props;
 const { linktekst } = Astro.props;
+const { color = "ared" } = Astro.props;
 ---
 
-<a href={link}>{linktekst}</a>
+<a class={color} href={link}>{linktekst}</a>
 
 <style>
-  a {
+  .ared {
     color: var(--color-black);
     background-color: var(--color-bg-beige);
-    padding: 12px 24px;
-    border-radius: 10px;
+    padding: 10px 24px;
+    border-radius: 5px;
+    border-color: var(--color-bg-beige);
+    border-style: solid;
+  }
+  .abeige {
+    color: var(--color-bg-beige);
+    background-color: var(--color-bg-red);
+    padding: 10px 24px;
+    border-radius: 5px;
+    border-color: var(--color-bg-beige);
+    border-style: solid;
   }
 </style>

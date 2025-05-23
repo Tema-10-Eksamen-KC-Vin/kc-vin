@@ -1,15 +1,20 @@
 ---
-
+const { bgcolor } = Astro.props;
 ---
 
-<div class="background">
+<div class={bgcolor}>
   <div class="grid"><slot /></div>
 </div>
 
 <style>
-  .background {
-    background: #411415;
+  .red {
+    background: var(--color-bg-red);
     width: 100%;
+  }
+  .beige {
+    background: var(--color-bg-beige);
+    width: 100%;
+    padding-top: 80px;
   }
   .grid {
     width: 100%;
