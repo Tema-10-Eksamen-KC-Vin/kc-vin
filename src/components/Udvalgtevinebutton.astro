@@ -1,0 +1,15 @@
+---
+const { link } = Astro.props;
+const { linktekst } = Astro.props;
+---
+
+<a href={link}>{linktekst}</a>
+
+<style>
+  a {
+    color: var(--color-black);
+    background-color: var(--color-bg-beige);
+    padding: 12px 24px;
+    border-radius: 10px;
+  }
+</style>
