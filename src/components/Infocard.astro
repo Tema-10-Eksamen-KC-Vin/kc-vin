@@ -1,0 +1,28 @@
+---
+const { text, header, link } = Astro.props;
+---
+
+<article>
+  <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+  <h2>{header}</h2>
+  <p>{text}</p>
+  <p>{link}</p>
+</article>
+
+<style>
+  article {
+    background-color: #faedcd;
+    padding: 20px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1,
+  h2,
+  p {
+    color: black;
+  }
+</style>
