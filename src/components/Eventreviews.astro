@@ -1,0 +1,41 @@
+---
+import Eventreviewcards from "./Eventreviewcards.astro";
+---
+
+<section>
+  <h4>Vurderinger fra tidligere gæster:</h4>
+  <div class="anmeldelser">
+    <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Frederikke Skovsen" />
+    <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Melanie Flemmingsen" />
+    <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Ashraf Melano" />
+    <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Ashraf Melano" />
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--color-bg-beige);
+    height: 600px;
+    padding-left: 50px;
+  }
+
+  section {
+    background-image: url(/src/assets/vektor/logo_gren.png), url(/src/assets/vektor/logo_vindruer.png);
+    background-position:
+      top left,
+      top right;
+
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .anmeldelser {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  h4 {
+    padding-top: 175px;
+    padding-bottom: 30px;
+  }
+</style>

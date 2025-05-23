@@ -1,0 +1,49 @@
+---
+const { text, name } = Astro.props;
+---
+
+<article>
+  <div class="stars">
+    <span style="color: yellowgreen;">
+      <i class="fa fa-star checked"></i>
+    </span>
+    <span style="color: yellowgreen;">
+      <i class="fa fa-star checked"></i>
+    </span>
+    <span style="color: yellowgreen;">
+      <i class="fa fa-star checked"></i>
+    </span>
+    <span style="color: yellowgreen;">
+      <i class="fa fa-star checked"></i>
+    </span>
+    <span style="color: var(--color-bg-beige);">
+      <i class="fa fa-star"></i>
+    </span>
+  </div>
+  <p>{text}</p>
+  <div class="profil">
+    <img src="/src/assets/placeholder.webp" alt="profil billede" class="profilbillede" />
+    <p>{name}</p>
+  </div>
+</article>
+
+<style>
+  article {
+    background-color: var(--color-bg-red);
+    border-radius: 3px;
+    padding: 20px;
+  }
+
+  .profil {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .profilbillede {
+    aspect-ratio: 1/1;
+    height: 60px;
+    border-radius: 35px;
+  }
+</style>
