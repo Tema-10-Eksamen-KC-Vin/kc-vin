@@ -9,7 +9,9 @@ const { special3 } = Astro.props;
 <div class="section">
   <h2>Om {producentNavn}</h2>
   <p>{desc}</p>
-  <h3>Specialiteter</h3>
+  <br />
+  <br />
+  <h5>Specialiteter</h5>
   <ul>
     <li>{special1}</li>
     <li>{special2}</li>
@@ -21,5 +23,24 @@ const { special3 } = Astro.props;
   .section {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+  }
+  h2,
+  h5,
+  li,
+  p {
+    color: var(--color-white);
+  }
+  h2 {
+    padding-bottom: 46px;
+  }
+  ul {
+    padding-left: 16px;
+    padding-bottom: 70px;
+  }
+  li {
+    padding-top: 10px;
+  }
+  p {
+    max-width: 560px;
   }
 </style>
