@@ -1,26 +1,35 @@
 ---
-
+const { title } = Astro.props;
+const { subtitle } = Astro.props;
 ---
 
-<div>
+<div class="background">
   <div class="center">
-    <h2>Udforsk andre vingårde</h2>
-    <p>Læs mere om vores udvalg fra andre vingårde</p>
+    <h2>{title}</h2>
+    <p>{subtitle}</p>
     <slot />
   </div>
 </div>
 
 <style>
-  div {
-    background-image: url(../assets/producent_background.png);
-    height: 1098px;
+  @media screen and (min-width: 800px) {
+    .center {
+      max-width: 1600px;
+      margin: auto;
+      width: 100%;
+    }
+  }
+  .background {
+    background: url(../assets/producent_background.png);
+    height: auto;
     width: 100%;
+    padding: 100px 0px 200px 0px;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   .center {
     align-content: center;
+  }
+  p {
+    padding-bottom: 40px;
   }
 </style>

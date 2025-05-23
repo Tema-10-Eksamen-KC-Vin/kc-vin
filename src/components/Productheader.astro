@@ -1,14 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import placeholder from "../assets/placeholder.webp";
+const { title } = Astro.props;
+const { subtitle } = Astro.props;
 ---
 
 <div class="headergrid">
   <div class="redoverlay">
     <div class="grid">
       <div class="headercontent">
-        <h1>Giovanni Rosso</h1>
-        <p>Piemonte, Italien · Grundlagt 1890</p>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
       </div>
     </div>
   </div>

@@ -13,8 +13,8 @@ import Productotherscard from "../components/Productotherscard.astro";
 ---
 
 <Layout>
-  <Productheader />
-  <Productmain>
+  <Productheader title="Giovanni Rosso" subtitle="Piemonte, Italien · Grundlagt 1890" />
+  <Productmain bgcolor="red">
     <Productmainsection producentNavn="Giovanni Rosso" desc="Giovanni Rosso er en familieejet vingård i hjertet af Barolo-regionen. Med over 100 års erfaring producerer de nogle af Italiens fineste vine med fokus på traditionelle metoder og terroir." special1="Barolo" special2="Barbera d'Alba" special3="Langhe Nebbiolo" />
     <Winearea areas="Piemonte, Sicilien" />
     <Udvalgtevine title="Udvalgte vine fra producenten">
@@ -25,7 +25,7 @@ import Productotherscard from "../components/Productotherscard.astro";
     </Udvalgtevine>
   </Productmain>
   <Productsection> <Udvalgtevinebutton link="/event" linktekst="Tilmeld Vinsmagning" /></Productsection>
-  <Productothers>
+  <Productothers title="Udforsk andre vingårde" subtitle="Læs mere om vores udvalg fra andre vingårde">
     <Productotherscard title="Domaine Lamy-Pillot" desc="Bourgogne, Frankrig · Grundlagt 1640" />
   </Productothers>
 </Layout>
