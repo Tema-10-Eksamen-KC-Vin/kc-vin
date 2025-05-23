@@ -1,0 +1,31 @@
+---
+import Infocard from "./Infocard.astro";
+---
+
+<div class="infobody">
+  <div>
+    <h3>Vores information</h3>
+    <p>Find alt du skal bruge for at få fat i os</p>
+  </div>
+
+  <section class="events">
+    <Infocard text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" link="info@kahlenbergchristiansen.dk" />
+    <Infocard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero." header="Telefon" link="+45 24 26 43 48" />
+    <Infocard text="Kohaven 15, 5300 Kerteminde" header="Kontor" link="Kohaven 15, 5300 Kerteminde" />
+  </section>
+</div>
+
+<style>
+  .infobody {
+    background-image: url(/src/assets/producent_background.png);
+    width: 100%;
+    height: 500px;
+  }
+
+  .events {
+    padding: 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+</style>
