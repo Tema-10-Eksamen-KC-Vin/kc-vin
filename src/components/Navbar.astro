@@ -383,7 +383,7 @@
     justify-content: center;
     padding: 0.5rem;
     border-radius: 0.375rem;
-    color: #374151;
+    color: var(--color-white);
     background: none;
     border: none;
     cursor: pointer;
@@ -430,7 +430,7 @@
 
   .mobile-menu-content {
     padding: 0.5rem 1rem 0.75rem;
-    background-color: var(--color-bg-beige);
+    background-color: var(--color-bg-red);
   }
 
   .mobile-nav-link {
@@ -444,7 +444,7 @@
   }
 
   .mobile-nav-link:hover {
-    background-color: #fbf2dc;
+    background-color: var(--color-red-light);
   }
 
   /* Mobile dropdown */
@@ -463,24 +463,26 @@
     text-align: left;
     display: block;
     padding: 0.5rem 1rem;
-    color: #1f2937;
+    color: var(--color-white);
     background: none;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      border-radius 0.3s ease;
     font-size: 1rem;
-    corner-radius: 0.375rem;
+    border-radius: 0.375rem;
   }
 
   .mobile-dropdown-button:hover {
-    background-color: #fbf2dc;
+    background-color: var(--color-red-light);
+    border-radius: 0.375rem;
   }
 
   .mobile-dropdown-content {
     transition: all 0.3s ease;
     overflow: hidden;
     max-height: 0;
-    background-color: #faedcd;
   }
 
   .mobile-dropdown-content.active {
@@ -525,18 +527,18 @@
   .mobile-column-list li::before {
     content: "•";
     margin-right: 0.5rem;
-    color: #00000050;
+    color: var(--color-beige);
   }
 
   .mobile-dropdown-link {
-    color: #374151;
+    color: var(--color-white);
     font-family: mundial-narrow-variable, sans-serif;
     text-decoration: none;
     transition: all 0.5s ease;
   }
 
   .mobile-dropdown-link:hover {
-    color: #1b1b1b;
+    color: var(--color-beige);
     corner-radius: 10%;
     transition: ease-in-out 0.5s;
   }
@@ -566,17 +568,24 @@
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    const dropdownContainer = document.querySelector(".dropdown-container");
-    const mainNavbar = document.getElementById("main-navbar");
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    // Dropdown hover effect for desktop
-    if (dropdownContainer) {
-      dropdownContainer.addEventListener("mouseenter", () => {
-        mainNavbar.classList.add("dropdown-active");
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenuButton.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
       });
+    }
 
-      dropdownContainer.addEventListener("mouseleave", () => {
-        mainNavbar.classList.remove("dropdown-active");
+    // Mobile dropdown toggle
+    const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+    const mobileDropdownContent = document.getElementById("mobile-dropdown-content");
+
+    if (mobileDropdownButton && mobileDropdownContent) {
+      mobileDropdownButton.addEventListener("click", () => {
+        mobileDropdownContent.classList.toggle("active");
       });
     }
   });

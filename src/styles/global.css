@@ -17,7 +17,8 @@ img {
   --color-white: #fff;
   --color-bg-beige: #faedcd;
   --color-bg-red: #411415;
-  --color-red: #692a2a;
+  --color-red: #411415;
+  --color-red-light: #692a2a;
   --color-beige: #fbf2dc;
 }
 
@@ -38,6 +39,8 @@ h6 {
   line-height: 1.2;
   font-family: kudryashev-d-contrast, sans-serif;
 }
+
+/* Desktop font size */
 
 h1 {
   font-size: 4rem;
@@ -80,6 +83,33 @@ h1 .accentfont {
   font-family: altesse-std-64pt, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Font size mobile */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
 }
 
 /* Media queries */

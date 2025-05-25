@@ -1,0 +1,73 @@
+---
+import vinsmagning from "../assets/image7.png";
+---
+
+<section>
+  <div class="infosektion">
+    <div class="text">
+      <h3>Kom på en kulinarisk smagsoplevelse - tilmeld dig vores vinsmagninger her</h3>
+      <p>Vores eksklusive vinsmagningsarrangementer byder på nøje udvalgte vine præsenteret af erfarne sommelierer i stemningsfulde og elegante omgivelser. En uforglemmelig oplevelse for den kræsne vinelsker, der ønsker det ypperste inden for smag, viden og atmosfære</p>
+      <a href="event.astro">Læs mere</a>
+    </div>
+    <div class="image">
+      <img src={vinsmagning.src} alt="Vinsmagnings event" />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--color-bg-red);
+    padding: 2rem;
+  }
+  .infosektion {
+    position: relative;
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .text,
+  .image {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .image {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--color-white);
+    max-width: 600px;
+  }
+
+  @media (min-width: 1200px) {
+    .infosektion {
+      flex-direction: row;
+    }
+
+    .text {
+      flex: 1;
+      margin-right: 20px;
+      order: 2;
+    }
+  }
+</style>
