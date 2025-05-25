@@ -6,8 +6,15 @@ import vinsmagning from "../assets/image7.png";
   <div class="infosektion">
     <div class="text">
       <h3>Kom på en kulinarisk smagsoplevelse - tilmeld dig vores vinsmagninger her</h3>
-      <p>Vores eksklusive vinsmagningsarrangementer byder på nøje udvalgte vine præsenteret af erfarne sommelierer i stemningsfulde og elegante omgivelser. En uforglemmelig oplevelse for den kræsne vinelsker, der ønsker det ypperste inden for smag, viden og atmosfære</p>
-      <a href="event.astro">Læs mere</a>
+      <p class="subtext">Vores eksklusive vinsmagningsarrangementer byder på nøje udvalgte vine præsenteret af erfarne sommelierer i stemningsfulde og elegante omgivelser. En uforglemmelig oplevelse for den kræsne vinelsker, der ønsker det ypperste inden for smag, viden og atmosfære</p>
+      <a href="#" class="read-more">
+        Læs mere
+        <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 6 15 12 9 18"></polyline>
+          </svg>
+        </span>
+      </a>
     </div>
     <div class="image">
       <img src={vinsmagning.src} alt="Vinsmagnings event" />
@@ -18,7 +25,8 @@ import vinsmagning from "../assets/image7.png";
 <style>
   section {
     background-color: var(--color-bg-red);
-    padding: 2rem;
+    padding-block: 4rem;
+    padding-inline: 2rem;
   }
   .infosektion {
     position: relative;
@@ -28,16 +36,18 @@ import vinsmagning from "../assets/image7.png";
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
   }
 
-  .text,
+  .subtext {
+    color: rgb(226, 226, 226);
+  }
   .image {
     flex: 1;
-    max-width: 600px;
+    max-width: 500px;
   }
 
   .image {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     justify-content: center;

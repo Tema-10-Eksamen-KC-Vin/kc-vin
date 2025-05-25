@@ -16,42 +16,52 @@ const producers = [
 ];
 ---
 
-<div class="winelist-bg">
-  <Glass class="bg-svg bg-glass" />
-  <Cutlery class="bg-svg bg-cutlery" />
-  <Dish class="bg-svg bg-dish" />
-  <Bottle class="bg-svg bg-bottle" />
+<section>
+  <div class="winelist-bg">
+    <Glass class="bg-svg bg-glass" />
+    <Cutlery class="bg-svg bg-cutlery" />
+    <Dish class="bg-svg bg-dish" />
+    <Bottle class="bg-svg bg-bottle" />
 
-  <div class="winelist-content">
-    <h2 class="winelist-title">Udforsk vores udvalg af vinproducenter</h2>
-    <div class="winelist-subtitle">Vi kender dem personligt, besøger dem løbende – og vi vælger kun vine, vi selv elsker at drikke.</div>
-    <div class="producer-list">
-      {
-        producers.map(({ name, desc }) => (
-          <div class="producer-item">
-            <div class="producer-info">
-              <h3 class="producer-name">{name}</h3>
-              <div class="producer-desc">{desc}</div>
+    <div class="winelist-content">
+      <h2 class="winelist-title">Udforsk vores udvalg af vinproducenter</h2>
+      <div class="winelist-subtitle">Vi kender dem personligt, besøger dem løbende – og vi vælger kun vine, vi selv elsker at drikke.</div>
+      <div class="producer-list">
+        {
+          producers.map(({ name, desc }) => (
+            <div class="producer-item">
+              <div class="producer-info">
+                <h3 class="producer-name">{name}</h3>
+                <div class="producer-desc">{desc}</div>
+              </div>
+              <a href="#" class="read-more">
+                Læs mere
+                <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+                  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 6 15 12 9 18" />
+                  </svg>
+                </span>
+              </a>
             </div>
-            <a href="#" class="read-more">
-              Læs mere
-              <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 6 15 12 9 18" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
+  section {
+    background: var(--color-bg-red);
+    padding-block: 4rem;
+  }
+
+  svg {
+    color: var(--color-red-light);
+  }
+
   .winelist-bg {
     position: relative;
-    background: var(--color-bg-red);
     color: var(--color-white);
     padding: 6rem 2rem 2rem 2rem;
     overflow: hidden;
@@ -63,22 +73,22 @@ const producers = [
     z-index: 0;
   }
   .bg-glass {
-    left: 3vw;
-    top: 5rem;
-    width: 18vw;
-  }
-  .bg-cutlery {
-    left: 1vw;
-    bottom: 10vw;
+    left: 10vw;
+    top: 15vw;
     width: 20vw;
   }
+  .bg-cutlery {
+    left: 6vw;
+    bottom: 15vw;
+    width: 25vw;
+  }
   .bg-dish {
-    right: 1vw;
-    top: 10vw;
+    right: 3vw;
+    top: 15vw;
     width: 22vw;
   }
   .bg-bottle {
-    right: 2vw;
+    right: 10vw;
     bottom: 5vw;
     width: 10vw;
   }
@@ -91,10 +101,11 @@ const producers = [
   .winelist-title {
     text-align: center;
     margin-bottom: 0.5rem;
+    padding-block: 2rem;
   }
   .winelist-subtitle {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4rem;
     color: #e5cfcf;
     font-size: 1.1rem;
   }
@@ -139,7 +150,7 @@ const producers = [
     transition: color 0.2s;
   }
   .read-more:hover {
-    color: #e5cfcf;
+    color: var(--color-beige);
   }
   @media (max-width: 700px) {
     .winelist-content {
