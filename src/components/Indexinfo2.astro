@@ -3,20 +3,24 @@
 ---
 
 <section>
-  <div class="infosektion">
-    <div class="text">
-      <h3>Lad os tage en snak om vin.</h3>
-      <p class="subtext">Er du på udkig efter noget, der passer til dit køkken, din gæsteprofil eller din filosofi? Vi sammensætter gerne et udvalg til dig og tager en snak over en flaske vin eller to.</p>
-      <span>
-        <a href="#" class="read-more">
-          Læs mere
-          <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
-            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 6 15 12 9 18"></polyline>
-            </svg>
+  <div class="overlay">
+    <div class="container">
+      <div class="infosektion">
+        <div class="text">
+          <h3>Lad os tage en snak om vin.</h3>
+          <p class="subtext">Er du på udkig efter noget, der passer til dit køkken, din gæsteprofil eller din filosofi? Vi sammensætter gerne et udvalg til dig og tager en snak over en flaske vin eller to.</p>
+          <span>
+            <a href="#" class="read-more">
+              Læs mere
+              <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 6 15 12 9 18"></polyline>
+                </svg>
+              </span>
+            </a>
           </span>
-        </a>
-      </span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -31,13 +35,33 @@
     min-height: 70svh;
     position: relative;
   }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
 
   .infosektion {
-    position: absolute;
-    left: 5rem;
-    bottom: 10rem;
+    max-width: 600px;
     padding: 2rem;
-    max-width: 40%;
+    padding-bottom: 10rem;
     color: white;
   }
 

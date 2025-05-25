@@ -40,6 +40,7 @@ h6 {
   font-weight: 400;
   line-height: 1.2;
   font-family: kudryashev-d-contrast, sans-serif;
+  transition: ease 0.3s;
 }
 
 /* Desktop font size */
@@ -90,27 +91,34 @@ h1 .accentfont {
 /* Font size mobile */
 @media (max-width: 767px) {
   h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
     font-size: 2rem;
   }
 
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
+  h2 {
     font-size: 1.5rem;
   }
 
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+  }
+
   h5 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   h6 {
+    font-size: 0.8rem;
+  }
+
+  p,
+  span,
+  button {
     font-size: 1rem;
+    font-weight: 200;
   }
 }
 

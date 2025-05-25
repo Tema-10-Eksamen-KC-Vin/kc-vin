@@ -79,7 +79,7 @@ import redlogo from "../assets/vektor/red_logo.svg";
     <!-- copyright sektion -->
     <div class="copyright-section">
       <div class="copyright-content">
-        <p class="copyright">© 2024 Kahlenberg og Christiansen. Alle rettigheder reserveret.</p>
+        <p class="copyright">© 2024 Kahlenberg og Christiansen. <br /> Alle rettigheder reserveret.</p>
         <div class="copyright-links">
           <a href="#" class="copyright-link">Privatlivspolitik</a>
           <a href="#" class="copyright-link">Betingelser</a>
@@ -117,7 +117,7 @@ import redlogo from "../assets/vektor/red_logo.svg";
   .section-title {
     font-size: 1.5rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   /* Contact sektion */
@@ -171,16 +171,16 @@ import redlogo from "../assets/vektor/red_logo.svg";
   }
 
   .logo-container {
-    width: 400px; /* Increased width */
-    height: 400px; /* Increased height */
+    width: 400px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .logo {
-    width: 400px; /* Increased width */
-    height: 400px; /* Increased height */
+    width: 400px;
+    height: 400px;
     object-fit: contain;
   }
 
@@ -188,7 +188,7 @@ import redlogo from "../assets/vektor/red_logo.svg";
   .newsletter-section {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .newsletter-description {
@@ -212,8 +212,10 @@ import redlogo from "../assets/vektor/red_logo.svg";
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    padding: 0.75rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 0.375rem;
+    font-size: 0.8rem;
+    height: 2.2rem;
   }
 
   .email-input::placeholder {
@@ -226,18 +228,16 @@ import redlogo from "../assets/vektor/red_logo.svg";
   }
 
   .submit-button {
-    background-color: white;
-    color: #411415;
-    padding: 0.75rem 1.5rem;
-    border: none;
+    background-color: var(--color-bg-red);
+    color: #ffffff;
+    padding: 0.34rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 0.375rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
-  }
-
-  .submit-button:hover {
-    background-color: #f3f4f6;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s;
+    font-size: 0.95rem;
   }
 
   .privacy-section {
@@ -257,9 +257,10 @@ import redlogo from "../assets/vektor/red_logo.svg";
   }
 
   .privacy-text {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     color: #d1d5db;
     line-height: 1.6;
+    white-space: no-wrap;
   }
 
   /* copyright Section */
@@ -276,7 +277,7 @@ import redlogo from "../assets/vektor/red_logo.svg";
   .copyright-content {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 2rem;
   }
@@ -318,6 +319,19 @@ import redlogo from "../assets/vektor/red_logo.svg";
     .container {
       max-width: 1200px;
       margin: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .copyright {
+      font-size: 0.7rem;
+    }
+    .copyright-links {
+      font-size: 0.7rem;
+      gap: 1rem;
+    }
+    .copyright-section a {
+      font-size: 0.7rem;
     }
   }
 </style>
