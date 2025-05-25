@@ -37,6 +37,7 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
     height: 100vh;
     overflow: hidden;
     color: white;
+    min-height: 100vh;
   }
 
   .hero-video-container {
@@ -87,17 +88,20 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
   }
 
   .hero-logo {
-    width: 300px;
+    width: 200px;
     height: auto;
     margin-bottom: 0.5rem;
+    transition: ease 0.3s;
   }
 
   .hero-text {
     position: absolute;
     bottom: 20%;
-    left: 1.5rem;
+    left: 2rem;
     text-align: left;
     max-width: 600px;
+    transition: ease 0.3s;
+    max-width: 80%;
   }
 
   .hero-heading {
@@ -107,5 +111,15 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
   .hero-subtext {
     line-height: 1.6;
     color: #d1d5db;
+  }
+
+  @media (min-width: 768px) {
+      .hero-logo {
+        width: 300px;
+        height: auto;
+        margin-bottom: 0.5rem;
+        transition: ease 0.3s;
+      }
+    }
   }
 </style>

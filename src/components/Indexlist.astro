@@ -18,11 +18,6 @@ const producers = [
 
 <section>
   <div class="winelist-bg">
-    <Glass class="bg-svg bg-glass" />
-    <Cutlery class="bg-svg bg-cutlery" />
-    <Dish class="bg-svg bg-dish" />
-    <Bottle class="bg-svg bg-bottle" />
-
     <div class="winelist-content">
       <h2 class="winelist-title">Udforsk vores udvalg af vinproducenter</h2>
       <div class="winelist-subtitle">Vi kender dem personligt, besøger dem løbende – og vi vælger kun vine, vi selv elsker at drikke.</div>
@@ -47,19 +42,18 @@ const producers = [
         }
       </div>
     </div>
+    <Glass class="bg-svg bg-glass" />
+    <Cutlery class="bg-svg bg-cutlery" />
+    <Dish class="bg-svg bg-dish" />
+    <Bottle class="bg-svg bg-bottle" />
   </div>
 </section>
 
 <style>
   section {
     background: var(--color-bg-red);
-    padding-block: 4rem;
+    padding-block: 6rem;
   }
-
-  svg {
-    color: var(--color-red-light);
-  }
-
   .winelist-bg {
     position: relative;
     color: var(--color-white);
@@ -67,36 +61,47 @@ const producers = [
     overflow: hidden;
     min-height: 100vh;
   }
-  .bg-svg {
-    position: absolute;
-    opacity: 0.08;
-    z-index: 0;
-  }
-  .bg-glass {
-    left: 10vw;
-    top: 15vw;
-    width: 20vw;
-  }
-  .bg-cutlery {
-    left: 6vw;
-    bottom: 15vw;
-    width: 25vw;
-  }
-  .bg-dish {
-    right: 3vw;
-    top: 15vw;
-    width: 22vw;
-  }
-  .bg-bottle {
-    right: 10vw;
-    bottom: 5vw;
-    width: 10vw;
-  }
   .winelist-content {
     position: relative;
     z-index: 1;
     max-width: 900px;
     margin: 0 auto;
+    min-height: 700px;
+  }
+
+  .bg-svg {
+    position: absolute;
+    opacity: 0.12;
+    z-index: 0;
+    color: var(--color-red-light);
+    pointer-events: none;
+    transition:
+      width 0.3s,
+      top 0.3s,
+      left 0.3s,
+      right 0.3s,
+      bottom 0.3s;
+  }
+
+  .bg-glass {
+    left: 250px;
+    top: 40px;
+    width: 200px;
+  }
+  .bg-cutlery {
+    left: 250px;
+    bottom: 200px;
+    width: 250px;
+  }
+  .bg-dish {
+    right: 250px;
+    top: 150px;
+    width: 250px;
+  }
+  .bg-bottle {
+    right: 300px;
+    bottom: 60px;
+    width: 140px;
   }
   .winelist-title {
     text-align: center;
@@ -139,26 +144,35 @@ const producers = [
     color: #e5cfcf;
     font-size: 1rem;
   }
-  .read-more {
-    display: flex;
-    align-items: center;
-    color: var(--color-white);
-    text-decoration: none;
-    font-size: 1rem;
-    gap: 0.3em;
-    white-space: nowrap;
-    transition: color 0.2s;
-  }
-  .read-more:hover {
-    color: var(--color-beige);
-  }
-  @media (max-width: 700px) {
+
+  @media (max-width: 1000px) {
     .winelist-content {
       padding: 0 0.5rem;
+      min-height: unset;
     }
-    .producer-item {
-      flex-direction: column;
-      gap: 0.5rem;
+    .bg-glass {
+      left: 2vw;
+      top: 2vw;
+      width: 38vw;
+      max-width: none;
+    }
+    .bg-cutlery {
+      left: 2vw;
+      bottom: 60vw;
+      width: 36vw;
+      max-width: none;
+    }
+    .bg-dish {
+      right: 2vw;
+      top: 80vw;
+      width: 28vw;
+      max-width: none;
+    }
+    .bg-bottle {
+      right: 2vw;
+      bottom: 8vw;
+      width: 18vw;
+      max-width: none;
     }
   }
 </style>
