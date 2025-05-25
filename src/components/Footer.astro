@@ -1,134 +1,323 @@
 ---
-
+import redlogo from "../assets/vektor/red_logo.svg";
 ---
 
-<footer>
-  <div class="footer_container">
-    <div class="footer_main">
-      <div class="kontakt_os_footer">
-        <h4>Kontakt os</h4>
-        <div class="kontakt_informationer">
-          <p>Telefon</p>
-          <p>+45 24 26 43 48</p>
-          <p>@E-mail</p>
-          <p>info@kahlenbergchristiansen.dk</p>
-          <p>Instagram</p>
-          <p>@kahlenberg_christiansen</p>
-          <p>Adresse</p>
-          <p>Kohave 15, 5300 Kerteminde</p>
+<footer class="footer">
+  <div class="container">
+    <div class="grid">
+      <!-- Contact Section -->
+      <div class="contact-section">
+        <h2 class="section-title">Kontakt os</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="label">Telefon</span>
+            <span>+45 24 26 43 48</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">E-mail</span>
+            <span>info@kahlenbergchristiansen.dk</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Adresse</span>
+            <span>Kohaven 15, 5300 Kerteminde</span>
+          </div>
         </div>
-        <div class="sociale_medier">
-          <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"></rect>
+              <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2"></path>
+              <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"></rect>
+              <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"></circle>
+            </svg>
+          </a>
         </div>
       </div>
-      <div class="nyhedsbrev_footer">
-        <h4>Nyhedsbrev</h4>
-        <p>Tilmeld dig vores nyhedsbrev, for at holde dig opdateret på kommende nyheder og events</p>
-        <form>
-          <input type="text" id="email" name="Email" placeholder="@Email" style="border-radius: 7.5px;" />
-          <button type="button" id="button">Tilmeld</button>
-          <input type="checkbox" id="checkbox" style="height: 30px;" />
-          <label for="checkbox" id="label">Ved at tilmelde dig vores nyhedsbrev, erklærer du dig enig i vores Privatlivspolitik og giver samtykke til at modtage opdateringer og markedsføring på e-mail, sms, sociale medier og andre digitale platforme fra Kahlenberg & Christianse om nyheder, information, fordele, tilbud og events. Du kan altid tilbagekalde dit samtykke.</label>
+
+      <!-- Logo -->
+      <div class="logo-section">
+        <div class="logo-container">
+          <img src={redlogo.src} alt="Company logo" class="logo" />
+        </div>
+      </div>
+
+      <!-- Newsletter sektion -->
+      <div class="newsletter-section">
+        <h2 class="section-title">Nyhedsbrev</h2>
+        <p class="newsletter-description">Tilmeld dig vores nyhedsbrev, for at holde dig opdateret på kommende nyheder og events</p>
+
+        <form class="newsletter-form">
+          <div class="input-group">
+            <input type="email" placeholder="Email" class="email-input" required />
+            <button type="submit" class="submit-button">Tilmeld</button>
+          </div>
+
+          <div class="privacy-section">
+            <label class="privacy-label">
+              <input type="checkbox" class="privacy-checkbox" required />
+              <span class="checkmark"></span>
+              <span class="privacy-text"> Ved at tilmelde dig vores nyhedsbrev, erklærer du dig enig i vores Privatlivspolitik og giver samtykke til at modtage opdateringer og markedsføring på e-mail, sms, sociale medier og andre digitale platforme fra Kahlenberg & Christianse om nyheder, information, fordele, tilbud og events. Du kan altid tilbagekalde dit samtykke. </span>
+            </label>
+          </div>
         </form>
       </div>
     </div>
-    <hr />
-    <div class="bottom_footer">
-      <div><p class="arr">&copy; 2024 Kahlenberg & Christiansen. All rights reserved.</p></div>
-      <div class="privacy_terms_cookies">
-        <a href="#" class="privacy">Privacy Policy</a>
-        <a href="#" class="terms">Terms of Service</a>
-        <a href="#" class="cookies">Cookies Settings</a>
+
+    <!-- copyright sektion -->
+    <div class="copyright-section">
+      <div class="copyright-content">
+        <p class="copyright">© 2024 Kahlenberg og Christiansen. Alle rettigheder reserveret.</p>
+        <div class="copyright-links">
+          <a href="#" class="copyright-link">Privatlivspolitik</a>
+          <a href="#" class="copyright-link">Betingelser</a>
+          <a href="#" class="copyright-link">Cookie indstillinger</a>
+        </div>
       </div>
     </div>
   </div>
 </footer>
 
 <style>
-  .footer_container {
-    background-image: url(/src/assets/vektor/logo_background.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--color-bg-red);
-    color: var(--color-white);
-    padding: 50px;
-    height: 100vh;
+  .footer {
+    background-color: #411415;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
   }
 
-  .footer_main {
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 4rem 1.5rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin-block: 150px;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
   }
 
-  .nyhedsbrev_footer {
-    display: grid;
-    grid-column: 3/4;
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
   }
 
-  .kontakt_informationer {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 0px;
+  /* Contact sektion */
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
-  .sociale_medier {
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .label {
+    color: #d1d5db;
+    min-width: 80px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: white;
+  }
+
+  .social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Logo sektion */
+  .logo-section {
+    margin: auto;
+  }
+
+  .logo-container {
+    width: 400px; /* Increased width */
+    height: 400px; /* Increased height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 400px; /* Increased width */
+    height: 400px; /* Increased height */
+    object-fit: contain;
+  }
+
+  /* Newsletter Section */
+  .newsletter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .newsletter-description {
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .input-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .email-input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+  }
+
+  .email-input::placeholder {
+    color: #9ca3af;
+  }
+
+  .email-input:focus {
+    outline: none;
+    border-color: white;
+  }
+
+  .submit-button {
+    background-color: white;
+    color: #411415;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+
+  .submit-button:hover {
+    background-color: #f3f4f6;
+  }
+
+  .privacy-section {
+    padding-top: 1rem;
+  }
+
+  .privacy-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+  }
+
+  .privacy-checkbox {
+    margin-top: 0.25rem;
+    accent-color: white;
+  }
+
+  .privacy-text {
+    font-size: 0.875rem;
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+
+  /* copyright Section */
+  .copyright-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 4rem;
+    padding-top: 2rem;
+  }
+
+  .copyright-section a {
+    font-size: 0.8rem;
+  }
+
+  .copyright-content {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 30px;
-    padding: 10px;
-  }
-  .sociale_medier i {
-    font-size: 2.5rem;
-  }
-
-  form {
-    display: grid;
-    grid-template-columns: 0.35fr 4fr 0fr 0fr 1fr;
-    grid-template-rows: 1fr 2.5fr;
-    gap: 10px;
-  }
-
-  #email {
-    grid-column: span 4;
-    grid-row: span 1;
-  }
-
-  #button {
-    grid-column: 5/6;
-    grid-row: span 1;
-  }
-
-  #checkbox {
-    grid-column: span 1;
-    grid-row: 2/3;
-    align-self: baseline;
-  }
-
-  #label {
-    grid-column: 2/6;
-    grid-row: 2/3;
-  }
-
-  a {
-    text-decoration: underline;
-  }
-
-  .bottom_footer {
-    display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 55px;
+    gap: 2rem;
   }
 
-  .privacy_terms_cookies {
+  .copyright {
+    font-size: 0.82rem;
+    color: #d1d5db;
+    margin: 0;
+  }
+
+  .copyright-links {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 30px;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .copyright-link {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .copyright-link:hover {
+    color: white;
+  }
+
+  /* Media Queries */
+  @media (min-width: 1200px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
   }
 </style>
