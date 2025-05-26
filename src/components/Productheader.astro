@@ -3,13 +3,12 @@ import { Image } from "astro:assets";
 import placeholder from "../assets/placeholder.webp";
 const { title } = Astro.props;
 const { subtitle } = Astro.props;
-import Navbar from "./Navbar.astro";
+import Navbar_2 from "./Navbar_2.astro";
 ---
 
-
 <header class="headergrid">
-    <div class="navbar">
-    <Navbar />
+  <div class="navbar">
+    <Navbar_2 />
   </div>
   <div class="redoverlay">
     <div class="grid">
@@ -26,7 +25,6 @@ import Navbar from "./Navbar.astro";
   .navbar {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    max-height: 120vh;
   }
   .redoverlay {
     background: linear-gradient(180deg, rgba(65, 20, 21, 0) 0%, rgba(65, 20, 21, 1) 100%);
@@ -55,6 +53,7 @@ import Navbar from "./Navbar.astro";
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    max-height: 900px;
   }
   .navbar {
     grid-column: 1 / 2;
