@@ -28,10 +28,18 @@ const { text, name } = Astro.props;
 </article>
 
 <style>
+  @media screen and (min-width: 800px) {
+    article {
+      min-height: 250px;
+    }
+  }
+
   article {
-    background-color: var(--color-red);
+    background-color: #692a2a;
     border-radius: 5px;
     padding: 20px;
+    min-width: 400px;
+    min-height: 180px;
   }
 
   .profil {
@@ -45,5 +53,8 @@ const { text, name } = Astro.props;
     aspect-ratio: 1/1;
     height: 60px;
     border-radius: 35px;
+  }
+  p {
+    color: white;
   }
 </style>
