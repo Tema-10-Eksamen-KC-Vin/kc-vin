@@ -28,10 +28,18 @@ import Eventreviewcards from "./Eventreviewcards.astro";
     background-repeat: no-repeat, no-repeat;
   }
 
+  @media screen and (min-width: 800px) {
+    .anmeldelser {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+    }
+  }
+
   .anmeldelser {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
   }
 
   h4 {

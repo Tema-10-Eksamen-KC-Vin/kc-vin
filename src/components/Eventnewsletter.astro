@@ -1,21 +1,99 @@
 ---
-
+import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
 ---
 
 <section>
-  <div class="newsletter_box">
-    <h2>Tilmeld dig nyhedsbrevet og hold dig opdateret på fremtidige oplevelser</h2>
-    <p>Tilmeld dig nu og oplev en smagfuld aften, hvor unikke vine præsenteres i de bedste rammer - perfekt til både nysgerrige og mere erfarne vinelskere.</p>
-    <form>
-      <input type="text" id="email" name="Email" placeholder="@Email" style="border-radius: 7.5px;" />
-      <button type="button" id="button">Tilmeld</button>
-      <input type="checkbox" id="checkbox" />
-      <label for="checkbox" id="label">Ved at tilmelde dig vores nyhedsbrev, erklærer du dig enig i vores Privatlivspolitik og giver samtykke til at modtage opdateringer og markedsføring på e-mail, sms, sociale medier og andre digitale platforme fra Kahlenberg & Christianse om nyheder, information, fordele, tilbud og events. Du kan altid tilbagekalde dit samtykke.</label>
-    </form>
+  <div class="overlay">
+    <div class="newsletter_box">
+      <h2>Tilmeld dig nyhedsbrevet og hold dig opdateret på fremtidige oplevelser</h2>
+      <p>Tilmeld dig nu og oplev en smagfuld aften, hvor unikke vine præsenteres i de bedste rammer - perfekt til både nysgerrige og mere erfarne vinelskere.</p>
+      <form>
+        <input type="text" id="email" name="Email" placeholder="@Email" />
+        <Udvalgtevinebutton color="ared" linktekst="Tilmeld" />
+        <label class="main">
+          <input type="checkbox" id="checkbox" />
+          <span class="checkbox-container"></span>
+        </label>
+        <label for="checkbox" id="label">Ved at tilmelde dig vores nyhedsbrev, erklærer du dig enig i vores Privatlivspolitik og giver samtykke til at modtage opdateringer og markedsføring på e-mail, sms, sociale medier og andre digitale platforme fra Kahlenberg & Christianse om nyheder, information, fordele, tilbud og events. Du kan altid tilbagekalde dit samtykke.</label>
+      </form>
+    </div>
   </div>
 </section>
 
 <style>
+  p {
+    padding-top: 25px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .main {
+      margin-right: 0px;
+    }
+  }
+
+  .main {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    max-height: 25px;
+    font-size: 20px;
+  }
+
+  .main input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  .checkbox-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid var(--color-bg-beige);
+    border-radius: 5px;
+  }
+
+  /* Hover effect */
+  .main:hover input ~ .checkbox-container {
+    background-color: var(--color-bg-beige);
+  }
+
+  /* Active effect */
+  .main input:active ~ .checkbox-container {
+    background-color: var(--color-bg-beige);
+  }
+
+  /* Checked effect */
+  .main input:checked ~ .checkbox-container {
+    background-color: var(--color-bg-red);
+  }
+
+  /* Checkmark */
+  .checkbox-container::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--color-bg-beige);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Display checkmark when checked */
+  .main input:checked ~ .checkbox-container::after {
+    display: block;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+  }
   section {
     background-image: url(/image.png);
     height: 750px;
@@ -26,8 +104,10 @@
   }
 
   .newsletter_box {
-    padding-inline: 300px;
-    padding-top: 250px;
+    max-width: 1085px;
+    margin: auto;
+    padding: 0px 50px 0px 50px;
+    padding-top: 200px;
     color: var(--color-bg-beige);
   }
   form {
@@ -35,11 +115,20 @@
     grid-template-columns: 0.15fr 4fr 0fr 0fr 1fr;
     grid-template-rows: 2fr 2.5fr;
     gap: 10px;
+    padding-top: 24px;
   }
 
   #email {
     grid-column: span 4;
     grid-row: span 1;
+    background-color: transparent;
+    border: solid var(--color-bg-beige);
+    border-radius: 5px;
+  }
+
+  #email::placeholder {
+    color: white;
+    padding-left: 10px;
   }
 
   #button {
@@ -55,5 +144,11 @@
   #label {
     grid-column: 2/6;
     grid-row: 2/3;
+    line-height: 150%;
+    font-size: 12px;
+    font-family: mundial-narrow-variable, sans-serif;
+  }
+  a {
+    text-align: center;
   }
 </style>
