@@ -11,16 +11,12 @@ const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const producers = [
-  { name: "Giovanni Rosso", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "Domaine Lamy-Pillot", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "Domaine Hauvette", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "Jean Chartron", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "Maison Brunet Randon", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "Antoine Lepetit", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "SAB’S", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-  { name: "Drouhin-Laroze", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
-];
+// Fetch vinliste fra Supabase
+const { data: producers, error } = await supabase.from("Winelist").select("*");
+
+if (error) {
+  console.error("Supabase fetch error:", error);
+}
 ---
 
 <section>
@@ -30,22 +26,26 @@ const producers = [
       <div class="winelist-subtitle">Vi kender dem personligt, besøger dem løbende – og vi vælger kun vine, vi selv elsker at drikke.</div>
       <div class="producer-list">
         {
-          producers.map(({ name, desc }) => (
-            <div class="producer-item">
-              <div class="producer-info">
-                <h3 class="producer-name">{name}</h3>
-                <div class="producer-desc">{desc}</div>
+          producers && producers.length > 0 ? (
+            producers.map(({ id, name, description }) => (
+              <div class="producer-item">
+                <div class="producer-info">
+                  <h3 class="producer-name">{name}</h3>
+                  <div class="producer-desc">{description}</div>
+                </div>
+                <a href={`/product/${id}`} class="read-more">
+                  Læs mere
+                  <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="9 6 15 12 9 18" />
+                    </svg>
+                  </span>
+                </a>
               </div>
-              <a href="#" class="read-more">
-                Læs mere
-                <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
-                  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 6 15 12 9 18" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-          ))
+            ))
+          ) : (
+            <div>Ingen producenter fundet.</div>
+          )
         }
       </div>
     </div>
