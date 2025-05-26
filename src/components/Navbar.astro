@@ -3,6 +3,32 @@
 // Vi har brugt AI til at generere HTML-strukturen og Javascript.
 // Vi har dog selv tilføjet og modificeret funktionaliteten for at sikre, at den passer til vores designkrav.
 // Selve stylingen og struktur af menu er lavet af os selv
+
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Fetch vinliste fra Supabase
+const { data: producers, error } = await supabase.from("Winelist").select("*");
+
+if (error) {
+  console.error("Supabase fetch error:", error);
+}
+
+function groupByLandAndRegion(producers) {
+  const grouped = {};
+  for (const p of producers) {
+    if (!grouped[p.land]) grouped[p.land] = {};
+    if (!grouped[p.land][p.region]) grouped[p.land][p.region] = [];
+    grouped[p.land][p.region].push(p);
+  }
+  return grouped;
+}
+
+const groupedProducers = groupByLandAndRegion(producers || []);
 ---
 
 <nav id="main-navbar">
@@ -32,52 +58,28 @@
           <!-- Desktop dropdown menu -->
           <div class="dropdown-menu">
             <div class="dropdown-content">
-              <!-- Left column -->
-              <div class="dropdown-column">
-                <h3 class="column-title">Frankrig</h3>
-
-                <h4 class="region-title">Champagne</h4>
-                <ul class="column-list">
-                  <li><a href="#" class="dropdown-link">Comte de Montagne</a></li>
-                </ul>
-
-                <h4 class="region-title">Chablis</h4>
-                <ul class="column-list">
-                  <li><a href="#" class="dropdown-link">Domaine Laroche</a></li>
-                </ul>
-
-                <h4 class="region-title">Bourgogne Côte d'Or</h4>
-                <ul class="column-list">
-                  <li><a href="#" class="dropdown-link">Domaine Antoine Lepetit de la Bigne</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Lamy-Pillot</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Jean Chartron</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Clémancey</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Philippe Livera</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Drouhin-Laroze</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Georges Noëllat</a></li>
-                  <li><a href="#" class="dropdown-link">Domaine Gros Frère & Soeur</a></li>
-                </ul>
-              </div>
-
-              <!-- Divider -->
-              <div class="dropdown-divider"></div>
-
-              <!-- Right column -->
-              <div class="dropdown-column">
-                <h3 class="column-title">Italien</h3>
-
-                <h4 class="region-title">Piemonte</h4>
-                <ul class="column-list">
-                  <li><a href="#" class="dropdown-link">Marengo Mauro</a></li>
-                  <li><a href="#" class="dropdown-link">Claudio Boggione</a></li>
-                  <li><a href="#" class="dropdown-link">Giovanni Rosso</a></li>
-                </ul>
-
-                <h4 class="region-title">Sardinien</h4>
-                <ul class="column-list">
-                  <li><a href="#" class="dropdown-link">Capichera</a></li>
-                </ul>
-              </div>
+              {
+                Object.entries(groupedProducers).map(([land, region]) => (
+                  <div class="dropdown-column">
+                    <h3 class="column-title">{land}</h3>
+                    {Object.entries(region).map(([region, producers]) => (
+                      <>
+                        <h4 class="region-title">{region}</h4>
+                        <ul class="column-list">
+                          {producers.map((producer) => (
+                            <li>
+                              <a href={`/producent/${producer.slug}`} class="dropdown-link">
+                                {producer.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ))}
+                    <div class="dropdown-divider" />
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
@@ -109,8 +111,8 @@
   <!-- Mobil menu -->
   <div id="mobile-menu" class="mobile-menu">
     <div class="mobile-menu-content">
-      <a href="index.astro" class="mobile-nav-link">Forside</a>
-      <a href="event.astro" class="mobile-nav-link">Events</a>
+      <a href="/" class="mobile-nav-link">Forside</a>
+      <a href="/event" class="mobile-nav-link">Events</a>
 
       <!-- Mobil dropdown -->
       <div class="mobile-dropdown">
@@ -118,57 +120,33 @@
 
         <div id="mobile-dropdown-content" class="mobile-dropdown-content">
           <div class="mobile-dropdown-inner">
-            <!-- Frankrig -->
-            <div class="mobile-column">
-              <h3 class="mobile-column-title">Frankrig</h3>
-
-              <h4 class="mobile-region-title">Champagne</h4>
-              <ul class="mobile-column-list">
-                <li><a href="#" class="mobile-dropdown-link">Comte de Montagne</a></li>
-              </ul>
-
-              <h4 class="mobile-region-title">Chablis</h4>
-              <ul class="mobile-column-list">
-                <li><a href="#" class="mobile-dropdown-link">Domaine Laroche</a></li>
-              </ul>
-
-              <h4 class="mobile-region-title">Bourgogne Côte d'Or</h4>
-              <ul class="mobile-column-list">
-                <li><a href="#" class="mobile-dropdown-link">Domaine Antoine Lepetit de la Bigne</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Lamy-Pillot</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Jean Chartron</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Clémancey</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Philippe Livera</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Drouhin-Laroze</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Georges Noëllat</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Domaine Gros Frère & Soeur</a></li>
-              </ul>
-            </div>
-
-            <div class="mobile-divider"></div>
-
-            <!-- Italien -->
-            <div class="mobile-column">
-              <h3 class="mobile-column-title">Italien</h3>
-
-              <h4 class="mobile-region-title">Piemonte</h4>
-              <ul class="mobile-column-list">
-                <li><a href="#" class="mobile-dropdown-link">Marengo Mauro</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Claudio Boggione</a></li>
-                <li><a href="#" class="mobile-dropdown-link">Giovanni Rosso</a></li>
-              </ul>
-
-              <h4 class="mobile-region-title">Sardinien</h4>
-              <ul class="mobile-column-list">
-                <li><a href="#" class="mobile-dropdown-link">Capichera</a></li>
-              </ul>
-            </div>
+            {
+              Object.entries(groupedProducers).map(([country, regions]) => (
+                <div class="mobile-column">
+                  <h3 class="mobile-column-title">{country}</h3>
+                  {Object.entries(regions).map(([region, producers]) => (
+                    <>
+                      <h4 class="mobile-region-title">{region}</h4>
+                      <ul class="mobile-column-list">
+                        {producers.map((producer) => (
+                          <li>
+                            <a href={`/producent/${producer.slug}`} class="mobile-dropdown-link">
+                              {producer.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ))}
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
 
-      <a href="About.astro" class="mobile-nav-link">Om os</a>
-      <a href="kontakt.astro" class="mobile-nav-link">Kontakt</a>
+      <a href="/om_os" class="mobile-nav-link">Om os</a>
+      <a href="/kontakt" class="mobile-nav-link">Kontakt</a>
     </div>
   </div>
 </nav>
