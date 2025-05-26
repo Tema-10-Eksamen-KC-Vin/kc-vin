@@ -9,7 +9,7 @@ import placeholder from "../assets/placeholder.webp";
       <h1>Kontakt os</h1>
       <p>Kohaven 15, 5300 Kerteminde</p>
     </div>
-  </div>0
+  </div>
   <Image src={placeholder} alt="" />
 </div>
 
@@ -40,5 +40,23 @@ import placeholder from "../assets/placeholder.webp";
     left: 40px;
     color: white;
     z-index: 2;
+  }
+
+  @media (min-width: 600px) {
+    .headercontent h1 {
+      font-size: 2.5rem;
+    }
+    .headercontent p {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .headercontent h1 {
+      font-size: 3rem;
+    }
+    .headercontent p {
+      font-size: 1.4rem;
+    }
   }
 </style>

@@ -12,17 +12,25 @@ const { text, header, link } = Astro.props;
 <style>
   article {
     background-color: #faedcd;
-    padding: 20px;
-    border-radius: 7px;
+    padding: 34px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    text-align: center;
+    max-width: 350px;
+    margin: auto;
+   
   }
 
   h1,
   h2,
   p {
     color: black;
+  }
+
+  @media (min-width: 600px) {
+   
   }
 </style>

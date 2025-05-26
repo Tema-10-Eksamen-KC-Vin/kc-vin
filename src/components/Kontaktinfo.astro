@@ -19,7 +19,9 @@ import Infocard from "./Infocard.astro";
   .infobody {
     background-image: url(/src/assets/producent_background.png);
     width: 100%;
-    height: 500px;
+   
+    padding: 40px;
+    padding-top: 70px;
   }
 
   .events {
@@ -27,5 +29,18 @@ import Infocard from "./Infocard.astro";
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+  }
+
+  @media (max-width: 500px) {
+    .events {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 900px) {
+    .events {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>
