@@ -1,0 +1,224 @@
+---
+import logopart1 from "../assets/vektor/logopart1.svg";
+const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80"];
+---
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<section
+  class="gallery-section"
+  x-data="{
+    images: [
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80'
+    ],
+    current: 0,
+    get visible() {
+      if(window.innerWidth < 600) return 3;
+      if(window.innerWidth < 900) return 2;
+      if(window.innerWidth < 1200) return 3;
+      return 4;
+    },
+    get max() { return this.images.length - this.visible; },
+    get dotCount() { return this.images.length - this.visible + 1; },
+    next() {
+      if (this.current < this.max) {
+        this.current++;
+      }
+    },
+    prev() {
+      if (this.current > 0) {
+        this.current--;
+      }
+    },
+    goTo(idx) {
+      this.current = idx;
+    },
+    handleResize() {
+      if(this.current > this.max) this.current = this.max < 0 ? 0 : this.max;
+    }
+  }"
+  x-init="window.addEventListener('resize', () => { handleResize() })"
+>
+  <img src={logopart1.src} alt="" class="gallery-svg" />
+  <div class="gallery-header">
+    <h3>Vores samarbejdspartnere</h3>
+  </div>
+  <div class="gallery-slider">
+    <div class="gallery-images" :style="`transform: translateX(-${current * (100 / visible)}%); transition: transform 0.5s cubic-bezier(.77,0,.18,1);`" style="will-change: transform;">
+      <template x-for="img in images" :key="img">
+        <img :src="img" alt="" />
+      </template>
+    </div>
+    <div class="gallery-controls">
+      <div class="gallery-dots">
+        <template x-for="i in dotCount">
+          <span class="dot" :class="{active: current === (i-1)}" :aria-label="`Gå til slide ${i}`" tabindex="0" @click="goTo(i-1)" @keydown.enter="goTo(i-1)" style="cursor:pointer"></span>
+        </template>
+      </div>
+      <div class="gallery-arrows">
+        <button @click="prev" :disabled="current === 0" aria-label="Forrige">
+          <span style="font-size:1.1rem;">&#8592;</span>
+        </button>
+        <button @click="next" :disabled="current === max" aria-label="Næste">
+          <span style="font-size:1.1rem;">&#8594;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <style>
+    .gallery-section {
+      background: #f9eed2;
+      padding-top: 5rem;
+      position: relative;
+      min-height: 60svh;
+      overflow: hidden;
+    }
+    .gallery-svg {
+      position: absolute;
+      top: 0;
+      right: 2vw;
+      width: 160px;
+      height: auto;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .gallery-header {
+      max-width: 1200px;
+      margin: 0 auto 2.5rem auto;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+      padding: 0 2vw;
+    }
+    .gallery-header h3 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .gallery-header p {
+      font-size: 1.2rem;
+      color: #222;
+      margin-bottom: 0;
+    }
+    .gallery-slider {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2vw;
+      overflow: hidden;
+    }
+    .gallery-images {
+      display: flex;
+      gap: 2.5vw;
+      margin-bottom: 1.5rem;
+      min-width: fit-content;
+      transition: gap 0.3s;
+    }
+    .gallery-images img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      background: #eee;
+      flex-shrink: 0;
+      box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
+      transition:
+        width 0.3s,
+        height 0.3s;
+    }
+    .gallery-controls {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+    }
+    .gallery-dots {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      display: inline-block;
+      transition:
+        background 0.2s,
+        transform 0.2s;
+      outline: none;
+    }
+    .dot.active {
+      background: #222;
+      transform: scale(1.15);
+    }
+    .gallery-arrows {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: auto;
+    }
+    .gallery-arrows button {
+      background: none;
+      border: 2px solid #222;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:
+        background 0.2s,
+        border-color 0.2s;
+      font-size: 1.1rem;
+      padding: 0;
+    }
+    .gallery-arrows button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .gallery-arrows button:hover:enabled {
+      background: #f3e5b1;
+      border-color: #bfa14a;
+    }
+    @media (max-width: 1200px) {
+      .gallery-images img {
+        width: 240px;
+        height: 240px;
+      }
+    }
+    @media (max-width: 900px) {
+      .gallery-images img {
+        width: 180px;
+        height: 180px;
+      }
+      .gallery-header,
+      .gallery-slider {
+        padding: 0 4vw;
+      }
+    }
+    @media (max-width: 600px) {
+      .gallery-images {
+        gap: 1vw;
+      }
+      .gallery-images img {
+        width: 90vw;
+        height: 40vw;
+        max-width: 320px;
+        max-height: 180px;
+      }
+      .gallery-slider {
+        gap: 1rem;
+      }
+    }
+  </style>
+</section>

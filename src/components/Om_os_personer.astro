@@ -1,0 +1,49 @@
+---
+import OmOsProfilcards from "./Om_os_profilcards.astro";
+import redlogo from "../assets/vektor/red_logo.svg";
+---
+
+<section>
+  <h2>Hvem er Kahlenberg & Chrisiansen</h2>
+  <h6>Mød personerne bag firmaet</h6>
+  <div>
+    <OmOsProfilcards header="Thomas Kahlenberg " text="Lidt om Thomas" />
+    <OmOsProfilcards header="Maria Kesby " text="Lidt om Maria" />
+  </div>
+  <div class="logo-section">
+    <div class="logo-container">
+      <img src={redlogo.src} alt="Company logo" class="logo" />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--color-bg-red);
+    color: var(--color-white);
+  }
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Logo sektion */
+  .logo-section {
+    margin: auto;
+  }
+
+  .logo-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+  }
+</style>
