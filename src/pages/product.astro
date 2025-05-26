@@ -10,6 +10,22 @@ import Winearea from "../components/Winearea.astro";
 import Productsection from "../components/Productsection.astro";
 import Productothers from "../components/Productothers.astro";
 import Productotherscard from "../components/Productotherscard.astro";
+
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+fetch(`${supabaseUrl}/rest/v1/Winelist`, {
+  headers: {
+    apikey: supabaseKey,
+    Authorization: `Bearer ${supabaseKey}`,
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log("Client-side producers:", data);
+  });
 ---
 
 <Layout>
