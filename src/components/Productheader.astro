@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import placeholder from "../assets/placeholder.webp";
 const { title } = Astro.props;
 const { subtitle } = Astro.props;
 import Navbar_2 from "./Navbar_2.astro";
+const { img } = Astro.props;
 ---
 
 <header class="headergrid">
@@ -18,7 +18,7 @@ import Navbar_2 from "./Navbar_2.astro";
       </div>
     </div>
   </div>
-  <Image src={placeholder} alt="" />
+  <img src={img} alt="" />
 </header>
 
 <style>
