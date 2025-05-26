@@ -27,13 +27,13 @@ if (error) {
       <div class="producer-list">
         {
           producers && producers.length > 0 ? (
-            producers.map(({ id, name, description }) => (
+            producers.map(({ slug, name, description }) => (
               <div class="producer-item">
                 <div class="producer-info">
                   <h3 class="producer-name">{name}</h3>
                   <div class="producer-desc">{description}</div>
                 </div>
-                <a href={`/product/${id}`} class="read-more">
+                <a href={`/product/${slug}`} class="read-more">
                   Læs mere
                   <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
                     <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -148,6 +148,10 @@ if (error) {
   }
 
   @media (max-width: 1000px) {
+    .producer-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .winelist-content {
       padding: 0 0.5rem;
       min-height: unset;
