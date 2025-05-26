@@ -2,8 +2,33 @@
 const { header, text } = Astro.props;
 ---
 
-<article>
-  <img src="/src/assets/vektor/placeholder.webp" alt="Profilbillede" />
+<article class="profilcard">
+  <img src="/src/assets/profilbillede_thomas.png" alt="Profilbillede" />
   <h4>{header}</h4>
   <p>{text}</p>
 </article>
+
+<style>
+  article {
+    padding: 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-color: var(--color-white);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  p {
+    padding-left: 0.7rem;
+  }
+</style>

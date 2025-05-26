@@ -29,23 +29,43 @@
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 45vw;
+    height: 100vw;
     color: var(--color-bg-beige);
   }
 
   .indhold {
-    padding: 175px;
+    padding: 0 50px;
     padding-top: 200px;
-    width: 1075px;
+    width: auto;
   }
 
   h2 {
-    width: 500px;
-    line-height: 4rem;
-    padding-bottom: 1rem;
+    width: auto;
+    line-height: 2rem;
   }
 
   p {
     padding-bottom: 1rem;
+  }
+
+  a:hover {
+    color: var(--color-white);
+  }
+
+  @media (min-width: 1000px) {
+    section {
+      height: 45vw;
+    }
+
+    .indhold {
+      padding: 175px;
+      padding-top: 200px;
+      width: 1075px;
+    }
+
+    h2 {
+      width: 500px;
+      line-height: 4rem;
+    }
   }
 </style>
