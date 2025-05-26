@@ -5,8 +5,6 @@ import Navbar from "./Navbar.astro";
 ---
 
 <header>
-
-
   <div class="headergrid">
     <nav class="navbar">
       <Navbar />
@@ -14,7 +12,6 @@ import Navbar from "./Navbar.astro";
     <div class="redoverlay">
       <div class="headercontent">
         <h1>Kontakt os</h1>
-        <p>Kohaven 15, 5300 Kerteminde</p>
       </div>
     </div>
     <Image src={kontakthero} alt="" />
@@ -35,11 +32,12 @@ import Navbar from "./Navbar.astro";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     position: relative;
+    max-height: 100vh;
+    overflow: hidden;
   }
-  .navbar{
-grid-column: 1 / 2;
-grid-row: 1 / 2;
-
+  .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
   img {
     grid-row: 1 / 2;
