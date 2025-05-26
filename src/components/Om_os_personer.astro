@@ -6,7 +6,7 @@ import redlogo from "../assets/vektor/red_logo.svg";
 <section>
   <h2>Hvem er Kahlenberg & Chrisiansen</h2>
   <h6>Mød personerne bag firmaet</h6>
-  <div>
+  <div class="person-section">
     <OmOsProfilcards header="Thomas Kahlenberg " text="Lidt om Thomas" />
     <OmOsProfilcards header="Maria Kesby " text="Lidt om Maria" />
   </div>
@@ -21,29 +21,56 @@ import redlogo from "../assets/vektor/red_logo.svg";
   section {
     background-color: var(--color-bg-red);
     color: var(--color-white);
-  }
-  div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    position: relative;
+    z-index: 1;
   }
 
-  /* Logo sektion */
   .logo-section {
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: -1;
   }
 
   .logo-container {
-    width: 400px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 800px;
+    width: 100%;
   }
 
   .logo {
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+
+  section {
+    padding-block: 50px;
+    padding-inline: 50px;
+  }
+
+  section h2 {
+    margin-bottom: 1rem;
+  }
+  section h6 {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 800px) {
+    .person-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    section {
+      padding-block: 125px;
+      padding-inline: 175px;
+    }
+    section h6 {
+      margin-bottom: 4rem;
+    }
   }
 </style>
