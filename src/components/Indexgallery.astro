@@ -18,7 +18,7 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
     ],
     current: 0,
     get visible() {
-      if(window.innerWidth < 600) return 1;
+      if(window.innerWidth < 600) return 3;
       if(window.innerWidth < 900) return 2;
       if(window.innerWidth < 1200) return 3;
       return 4;
