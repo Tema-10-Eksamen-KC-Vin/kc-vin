@@ -1,5 +1,8 @@
 ---
-// Navbar.astro - Self-contained version with updated dropdown styling
+// Navbar.astro funktionalitet er kodet ved brug af AI, specifikt v0.dev og GitHub Copilot.
+// Vi har brugt AI til at generere HTML-strukturen og Javascript.
+// Vi har dog selv tilføjet og modificeret funktionaliteten for at sikre, at den passer til vores designkrav.
+// Selve stylingen og struktur af menu er lavet af os selv
 ---
 
 <nav id="main-navbar">
@@ -287,7 +290,7 @@
     right: 0;
     top: 0;
     width: 100%;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-bg-red-dark);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all 0.3s ease;
@@ -430,7 +433,7 @@
 
   .mobile-menu-content {
     padding: 0.5rem 1rem 0.75rem;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-bg-red-dark);
   }
 
   .mobile-nav-link {
@@ -483,9 +486,11 @@
     transition: all 0.3s ease;
     overflow: hidden;
     max-height: 0;
+    border-radius: 10px;
   }
 
   .mobile-dropdown-content.active {
+    background-color: var(--color-bg-red);
     max-height: 80vh;
     overflow-y: auto;
   }
@@ -535,13 +540,14 @@
     color: var(--color-white);
     font-family: mundial-narrow-variable, sans-serif;
     text-decoration: none;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
 
   .mobile-dropdown-link:hover {
-    color: var(--color-beige);
-    corner-radius: 10%;
-    transition: ease-in-out 0.5s;
+    color: var(--color-bg-beige);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: ease-in-out 0.3s;
   }
 
   .mobile-divider {

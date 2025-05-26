@@ -4,6 +4,13 @@ import Cutlery from "../assets/Illustrationer/illustrationer-05.svg";
 import Dish from "../assets/Illustrationer/illustrationer-02.svg";
 import Bottle from "../assets/Illustrationer/illustrationer-03.svg";
 
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 const producers = [
   { name: "Giovanni Rosso", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
   { name: "Domaine Lamy-Pillot", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros." },
