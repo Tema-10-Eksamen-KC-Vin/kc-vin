@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Udvalgtevinebutton from "../../components/Udvalgtevinebutton.astro";
+import Productheader from "../../components/Productheader.astro";
+import Productmain from "../../components/Productmain.astro";
+import Productmainsection from "../../components/Productmainsection.astro";
+import Udvalgtevine from "../../components/Udvalgtevine.astro";
+import Winecard from "../../components/Winecard.astro";
+import Winearea from "../../components/Winearea.astro";
+import Productsection from "../../components/Productsection.astro";
+import Productothers from "../../components/Productothers.astro";
+import Productotherscard from "../../components/Productotherscard.astro";
+
+import { createClient } from "@supabase/supabase-js";
+
+export async function getStaticPaths() {
+  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+  const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const { data, error } = await supabase.from("Winelist").select("slug");
+  if (error) throw error;
+
+  return data.map((row) => ({
+    params: { product: row.slug },
+  }));
+}
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+const { product } = Astro.params;
+// Fetch vinliste fra Supabase
+const { data: producers, error } = await supabase.from("Winelist").select("*").eq("slug", product).single();
+
+if (error) {
+  console.error("Supabase fetch error:", error);
+}
+
+console.log("Producers", producers);
+---
+
+<Layout>
+  <Productheader img={producers.logo} title={producers.name} subtitle={producers.origin_info} />
+  <Productmain bgcolor="red">
+    <Productmainsection producentNavn={producers.name} desc={producers.description} special1={producers.wine_types[1]} special2={producers.wine_types[2]} special3={producers.wine_types[3]} />
+    <Winearea img={producers.kort} areas={producers.region} />
+    <Udvalgtevine title="Udvalgte vine fra producenten">
+      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Udvalgtevinebutton link="https://www.giovannirosso.com/it/" linktekst=`Læs mere om ${producers.name}` />
+    </Udvalgtevine>
+  </Productmain>
+  <Productsection> <Udvalgtevinebutton link="/event" linktekst="Tilmeld Vinsmagning" /></Productsection>
+  <Productothers title="Udforsk andre vingårde" subtitle="Læs mere om vores udvalg fra andre vingårde">
+    <Productotherscard title="Domaine Lamy-Pillot" desc="Bourgogne, Frankrig · Grundlagt 1640" />
+  </Productothers>
+</Layout>
