@@ -2,44 +2,63 @@
 import Infocard from "./Infocard.astro";
 ---
 
-<div class="infobody">
-  <div>
-    <h3>Vores information</h3>
-    <p>Find alt du skal bruge for at få fat i os</p>
-  </div>
+<section>
+  <div class="infobody">
+    <div class="infoheading">
+      <h2>Vores information</h2>
+      <p>Find alt du skal bruge for at få fat i os</p>
+    </div>
 
-  <section class="events">
-    <Infocard text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" link="info@kahlenbergchristiansen.dk" />
-    <Infocard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero." header="Telefon" link="+45 24 26 43 48" />
-    <Infocard text="Kohaven 15, 5300 Kerteminde" header="Kontor" link="Kohaven 15, 5300 Kerteminde" />
-  </section>
-</div>
+    <div class="kontaktinfo">
+      <Infocard class="infocard" text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" linktext="info@kahlenbergchristiansen.dk" link="mailto:info@kahlenbergchristiansen.dk" />
+      <Infocard class="infocard" text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero." header="Telefon" linktext="+45 24 26 43 48" link="tel:+4524264348" />
+      <Infocard class="infocard" text=" Kohaven 15, 5300 Kerteminde" header="Kontor" linktext="Kohaven 15, 5300 Kerteminde" link="" />
+    </div>
+  </div>
+</section>
 
 <style>
-  .infobody {
-    background-image: url(/src/assets/producent_background.png);
+  section {
+    background-image: url(/src/assets/infocardbaggrund.webp);
+    background-size: cover;
+    padding: 4rem;
     width: 100%;
-   
-    padding: 40px;
+  }
+
+  .infoheading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .infobody {
+    max-width: 1200px;
+    margin: 0 auto;
     padding-top: 70px;
   }
 
-  .events {
-    padding: 7%;
+  .kontaktinfo {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  @media (max-width: 500px) {
-    .events {
-      grid-template-columns: 1fr;
-    }
+  /* Card styling */
+
+  .infocard h2 {
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    margin-bottom: 0.5em;
+  }
+
+  .infocard p {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.5;
+    color: rgb(75, 75, 75);
   }
 
   /* Desktop */
-  @media (min-width: 900px) {
-    .events {
+  @media (min-width: 1200px) {
+    .kontaktinfo {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
