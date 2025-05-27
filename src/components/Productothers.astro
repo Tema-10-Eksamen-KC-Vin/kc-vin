@@ -4,18 +4,20 @@ const { subtitle } = Astro.props;
 ---
 
 <div class="background">
-  <div class="gallery-fade gallery-fade-left"></div>
-  <div class="gallery-fade gallery-fade-right"></div>
-  <div class="center">
-    <div class="text">
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
-    </div>
-    <div class="flex" id="product-flex">
-      <slot />
-    </div>
-    <div class="scroll-progress-bar">
-      <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="overlay">
+    <div class="gallery-fade gallery-fade-left"></div>
+    <div class="gallery-fade gallery-fade-right"></div>
+    <div class="center">
+      <div class="text">
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+      </div>
+      <div class="flex" id="product-flex">
+        <slot />
+      </div>
+      <div class="scroll-progress-bar">
+        <div class="scroll-progress" id="scroll-progress"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -29,19 +31,31 @@ const { subtitle } = Astro.props;
     }
   }
   .background {
-    background: url(../assets/producent_background.png);
+    background: url(../assets/producent_background.webp);
+    background-size: contain;
     height: auto;
     width: 100%;
-    padding: 100px 0px 200px 0px;
+    height: 1000px;
     background-size: cover;
     position: relative;
   }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 245, 220, 0.8);
+    z-index: 1;
+  }
+
   .center {
     align-content: center;
     padding: 0;
   }
 
   .text {
+    padding-block: 2rem;
     padding-inline: 2rem;
     max-width: 1200px;
     margin-inline: auto;

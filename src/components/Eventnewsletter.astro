@@ -8,7 +8,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
       <h2>Tilmeld dig nyhedsbrevet og hold dig opdateret på fremtidige oplevelser</h2>
       <p>Tilmeld dig nu og oplev en smagfuld aften, hvor unikke vine præsenteres i de bedste rammer - perfekt til både nysgerrige og mere erfarne vinelskere.</p>
       <form>
-        <input type="text" id="email" name="Email" placeholder="@Email" />
+        <input type="text" id="email" name="Email" placeholder="Email" />
         <Udvalgtevinebutton color="ared" linktekst="Tilmeld" />
         <label class="main">
           <input type="checkbox" id="checkbox" />
@@ -119,16 +119,17 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
   }
 
   #email {
+    padding-inline: 10px;
     grid-column: span 4;
     grid-row: span 1;
     background-color: transparent;
     border: solid var(--color-bg-beige);
     border-radius: 5px;
+    color: var(--color-white);
   }
 
   #email::placeholder {
-    color: white;
-    padding-left: 10px;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   #button {
