@@ -10,9 +10,11 @@ import Eventhero from "../assets/eventhero.png";
       <Navbar />
     </nav>
     <div class="redoverlay">
-      <div class="headercontent">
-        <h1>Nye vinsmagnings events</h1>
-        <p>Leder du efter en ny oplevelse, meld dig til vores vinsmagninger og få en uforglemmelig aften med unikke vin.</p>
+      <div class="grid">
+        <div class="headercontent">
+          <h1>Nye vinsmagnings events</h1>
+          <p>Leder du efter en ny oplevelse, meld dig til vores vinsmagninger og få en uforglemmelig aften med unikke vin.</p>
+        </div>
       </div>
     </div>
     <Image src={Eventhero} alt="" />
@@ -27,6 +29,9 @@ import Eventhero from "../assets/eventhero.png";
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
   .headergrid {
     display: grid;
@@ -48,15 +53,22 @@ import Eventhero from "../assets/eventhero.png";
     object-fit: cover;
   }
   .headercontent {
-    position: absolute;
-    bottom: 30px;
-
-    color: white;
+    color: var(--color-white);
     z-index: 2;
-    padding-left: 5vw;
-    padding-bottom: 2vw;
-    padding-right: 15vw;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-content: end;
+    padding: 50px 20px;
   }
-
-  
+  .grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+  }
 </style>
