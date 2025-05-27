@@ -9,12 +9,12 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
   class="gallery-section"
   x-data="{
     images: [
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80'
+      'https://waopysxirqtzanbngglt.supabase.co/storage/v1/object/sign/instagram/pexels-leeloothefirst-4622303.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QyNmJkMGMxLWM1MjctNGVkMS05ZmI5LWJhZjE0ZmYzM2M2MSJ9.eyJ1cmwiOiJpbnN0YWdyYW0vcGV4ZWxzLWxlZWxvb3RoZWZpcnN0LTQ2MjIzMDMuanBnIiwiaWF0IjoxNzQ4MzAzMDAwLCJleHAiOjE3Nzk4MzkwMDB9.4T8lqNn8wVwOhijR7pjGA3VhAXat93k5NjyDjvvG3Lo',
+      'https://waopysxirqtzanbngglt.supabase.co/storage/v1/object/sign/instagram/10.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QyNmJkMGMxLWM1MjctNGVkMS05ZmI5LWJhZjE0ZmYzM2M2MSJ9.eyJ1cmwiOiJpbnN0YWdyYW0vMTAuSlBHIiwiaWF0IjoxNzQ4MzAzMDExLCJleHAiOjE3Nzk4MzkwMTF9._GdUXFcniBzZcOMNTYj7gTQM0p0cQ_SXzZJTtGUc_zg',
+      'https://waopysxirqtzanbngglt.supabase.co/storage/v1/object/sign/instagram/Eleganza%20del%20Barolo%202019.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QyNmJkMGMxLWM1MjctNGVkMS05ZmI5LWJhZjE0ZmYzM2M2MSJ9.eyJ1cmwiOiJpbnN0YWdyYW0vRWxlZ2FuemEgZGVsIEJhcm9sbyAyMDE5LnBuZyIsImlhdCI6MTc0ODMwMzAyNCwiZXhwIjoxNzc5ODM5MDI0fQ.7DgPD5nVrgJ_1R48IDmBNQLv-R5oKuTyB0HjTSBiO8Y',
+      'https://waopysxirqtzanbngglt.supabase.co/storage/v1/object/sign/instagram/8.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QyNmJkMGMxLWM1MjctNGVkMS05ZmI5LWJhZjE0ZmYzM2M2MSJ9.eyJ1cmwiOiJpbnN0YWdyYW0vOC5KUEciLCJpYXQiOjE3NDgzMDMwNDIsImV4cCI6MTc3OTgzOTA0Mn0.L6nHuWWzaU69hqabQRhfxVLVDGGWVX9rsFDYJ2pFsp8',
+      'https://waopysxirqtzanbngglt.supabase.co/storage/v1/object/sign/instagram/pexels-ekrulila-18338619.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QyNmJkMGMxLWM1MjctNGVkMS05ZmI5LWJhZjE0ZmYzM2M2MSJ9.eyJ1cmwiOiJpbnN0YWdyYW0vcGV4ZWxzLWVrcnVsaWxhLTE4MzM4NjE5LmpwZyIsImlhdCI6MTc0ODMwMzA1OSwiZXhwIjoxNzc5ODM5MDU5fQ.5nksuEMLLbdvrO9IU8IfxajtuJ5WVnM8EchBz-j7vJE',
+      'https://waopysxirqtzanbngglt.supabase.co/storage/v1/object/sign/instagram/9.JPG?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2QyNmJkMGMxLWM1MjctNGVkMS05ZmI5LWJhZjE0ZmYzM2M2MSJ9.eyJ1cmwiOiJpbnN0YWdyYW0vOS5KUEciLCJpYXQiOjE3NDgzMDMwOTUsImV4cCI6MTc3OTgzOTA5NX0.1ariCqLKAVtjtunWjId4TYi00IKsaaCGnREi5n8yoiE'
     ],
     current: 0,
     get visible() {
@@ -46,9 +46,12 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
 >
   <img src={logopart1.src} alt="" class="gallery-svg" />
   <div class="gallery-header">
-    <h3>Vores samarbejdspartnere</h3>
+    <h3>Følg med på instagram</h3>
+    <p>Hold dig opdateret på nye producenter, kommende smagninger, særlige flasker og hvad vi selv drikker lige nu.</p>
   </div>
   <div class="gallery-slider">
+    <div class="gallery-fade gallery-fade-left"></div>
+    <div class="gallery-fade gallery-fade-right"></div>
     <div class="gallery-images" :style="`transform: translateX(-${current * (100 / visible)}%); transition: transform 0.5s cubic-bezier(.77,0,.18,1);`" style="will-change: transform;">
       <template x-for="img in images" :key="img">
         <img :src="img" alt="" />
@@ -71,9 +74,10 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
     </div>
   </div>
   <style>
+    /* Mobile-first base styles */
     .gallery-section {
       background: #f9eed2;
-      padding-top: 5rem;
+      padding: 5rem 1rem 2rem 1rem;
       position: relative;
       min-height: 60svh;
       overflow: hidden;
@@ -96,7 +100,7 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
       padding: 0 2vw;
     }
     .gallery-header h3 {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: clamp(1.25rem, 5vw, 2rem);
       margin-bottom: 1rem;
       font-weight: 400;
     }
@@ -109,7 +113,7 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 2rem;
+      gap: 1rem;
       position: relative;
       z-index: 2;
       max-width: 1200px;
@@ -117,16 +121,34 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
       padding: 0 2vw;
       overflow: hidden;
     }
+    .gallery-fade {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 125px;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .gallery-fade-left {
+      left: 0;
+      background: linear-gradient(to right, var(--color-bg-beige) 0%, transparent 70%);
+    }
+    .gallery-fade-right {
+      right: 0;
+      background: linear-gradient(to left, var(--color-bg-beige) 0%, transparent 70%);
+    }
     .gallery-images {
       display: flex;
-      gap: 2.5vw;
+      gap: 1vw;
       margin-bottom: 1.5rem;
       min-width: fit-content;
       transition: gap 0.3s;
     }
     .gallery-images img {
-      width: 320px;
-      height: 320px;
+      width: 90vw;
+      height: 40vw;
+      max-width: 320px;
+      max-height: 180px;
       object-fit: cover;
       border-radius: 20px;
       background: #eee;
@@ -150,7 +172,7 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #ccc;
+      background: rgba(0, 0, 0, 0.15);
       display: inline-block;
       transition:
         background 0.2s,
@@ -168,7 +190,7 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
     }
     .gallery-arrows button {
       background: none;
-      border: 2px solid #222;
+      border: 2px solid var(--color-bg-red-dark);
       border-radius: 50%;
       width: 32px;
       height: 32px;
@@ -179,45 +201,61 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
       transition:
         background 0.2s,
         border-color 0.2s;
-      font-size: 1.1rem;
       padding: 0;
     }
     .gallery-arrows button:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
+      opacity: 0.7;
+      cursor: default;
     }
     .gallery-arrows button:hover:enabled {
-      background: #f3e5b1;
-      border-color: #bfa14a;
+      background: var(--color-beige);
+      border-color: var(--color-red);
     }
-    @media (max-width: 1200px) {
-      .gallery-images img {
-        width: 240px;
-        height: 240px;
+
+    /* Media querries */
+
+    @media (min-width: 600px) {
+      .gallery-images {
+        gap: 2.5vw;
       }
-    }
-    @media (max-width: 900px) {
       .gallery-images img {
         width: 180px;
         height: 180px;
+        max-width: none;
+        max-height: none;
+      }
+      .gallery-slider {
+        gap: 2rem;
+      }
+      .gallery-section {
+        height: 50vh;
+        min-height: 30svh;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .gallery-images img {
+        width: 240px;
+        height: 240px;
       }
       .gallery-header,
       .gallery-slider {
         padding: 0 4vw;
       }
     }
-    @media (max-width: 600px) {
-      .gallery-images {
-        gap: 1vw;
-      }
+    @media (min-width: 1200px) {
       .gallery-images img {
-        width: 90vw;
-        height: 40vw;
-        max-width: 320px;
-        max-height: 180px;
+        width: 320px;
+        height: 320px;
       }
+      .gallery-header,
       .gallery-slider {
-        gap: 1rem;
+        padding: 0 2vw;
+      }
+      .gallery-section {
+        height: 60vh;
+        min-height: 60svh;
+        padding-top: 2rem;
       }
     }
   </style>

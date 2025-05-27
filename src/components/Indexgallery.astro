@@ -54,7 +54,7 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
     <div class="gallery-fade gallery-fade-right"></div>
     <div class="gallery-images" :style="`transform: translateX(-${current * (100 / visible)}%); transition: transform 0.5s cubic-bezier(.77,0,.18,1);`" style="will-change: transform;">
       <template x-for="img in images" :key="img">
-        <img :src="img" alt="" />
+        <img :src="img" alt="" loading="lazy" />
       </template>
     </div>
     <div class="gallery-controls">
