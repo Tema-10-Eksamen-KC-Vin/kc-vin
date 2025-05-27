@@ -1,40 +1,39 @@
 ---
 const { date, header, name1, name2, text } = Astro.props;
+
+import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
 ---
 
 <article>
   <img src="/image.png" alt="Billede" />
-  <button class="event_button">Event</button>
   <h6>{date}</h6>
   <h4>{header}</h4>
-  <p class="bold">Arrangører</p>
-  <p>{name1}</p>
-  <p>{name2}</p>
-  <p class="bold">info</p>
-  <p>{text}</p>
-
-  <button class="primary_button">Se detaljer</button>
+  <div class="content">
+    <h6>Arrangører</h6>
+    <p>{name1}</p>
+    <p>{name2}</p>
+  </div>
+  <div class="content">
+    <h6>Info</h6>
+    <p>{text}</p>
+  </div>
+  <div class="margin">
+    <Udvalgtevinebutton link="/eventpage" linktekst="Se detaljer" color="alightred" />
+  </div>
 </article>
 
 <style>
+  .margin {
+    margin: 20px 20px 40px 20px;
+  }
   article {
-    background-color: var(--color-red);
+    background-color: var(--color-red-light);
     border-radius: 7px;
     display: grid;
     grid-template-columns: subgrid;
-  }
-  .primary_button {
-    background-color: var(--color-red);
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--color-bg-beige);
-    color: var(--color-bg-beige);
-    font-size: 1rem;
-    padding-inline: 20px;
-    padding-block: 10px;
-    border-radius: 3px;
-    width: 50%;
-    margin-block: 20px;
+    grid-template-rows: subgrid;
+    grid-row: 1 / 7;
+    gap: 40px;
   }
 
   h1,
@@ -45,32 +44,14 @@ const { date, header, name1, name2, text } = Astro.props;
   h6,
   p {
     color: var(--color-bg-beige);
-  }
-
-  img,
-  h6 {
-    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .bold {
     margin-top: 20px;
   }
-
-  .event_button {
-    background-color: var(--color-bg-beige);
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--color-bg-beige);
-    color: var(--color-black);
-    font-size: 0.75rem;
-    padding-inline: 15px;
-    padding-block: 5px;
-    border-radius: 3px;
-  }
-  .event_button {
-    width: 20%;
-    position: relative;
-    bottom: 80px;
-    left: 30px;
+  img {
+    grid-row: 1 / 2;
   }
 </style>
