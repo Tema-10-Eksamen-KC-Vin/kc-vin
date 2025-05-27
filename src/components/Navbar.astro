@@ -132,7 +132,7 @@ const groupedProducers = groupByLandAndRegion(producers || []);
                       <ul class="mobile-column-list">
                         {producers.map((producer) => (
                           <li>
-                            <a href={`/producent/${producer.slug}`} class="mobile-dropdown-link">
+                            <a href={`/product/${producer.slug}`} class="mobile-dropdown-link">
                               {producer.name}
                             </a>
                           </li>
@@ -419,7 +419,7 @@ const groupedProducers = groupByLandAndRegion(producers || []);
   }
 
   .mobile-menu.active {
-    max-height: 100vh;
+    max-height: 120svh;
   }
 
   .mobile-menu-content {
@@ -554,6 +554,16 @@ const groupedProducers = groupByLandAndRegion(producers || []);
     margin: 1rem 0;
   }
 
+  /* Navbar links */
+
+  #mobile-dropdown-button {
+    font-size: 1rem;
+  }
+
+  .mobile-menu-content a {
+    font-size: 1rem;
+  }
+
   /* Media Queries */
   @media (min-width: 768px) {
     .nav-desktop {
@@ -592,5 +602,15 @@ const groupedProducers = groupByLandAndRegion(producers || []);
         mobileDropdownContent.classList.toggle("active");
       });
     }
+
+    // Force reload for dynamic producer links
+    document.querySelectorAll(".dropdown-link, .mobile-dropdown-link").forEach((link) => {
+      link.addEventListener("click", function (e) {
+        if (window.location.pathname === this.getAttribute("href")) {
+          e.preventDefault();
+          window.location.href = this.getAttribute("href");
+        }
+      });
+    });
   });
 </script>
