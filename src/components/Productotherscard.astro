@@ -1,9 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import placeholderWine from "../assets/placeholderWine.png";
-const { title } = Astro.props;
-const { desc } = Astro.props;
-
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
@@ -21,17 +16,19 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
       <div class="card">
         <img src={logo} alt="" />
         <div class="content">
-          <h5>{name}</h5>
+          <h4>{name}</h4>
           <p>{description}</p>
         </div>
-        <a href={`/product/${slug}`} class="read-more">
-          Læs mere
-          <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
-            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 6 15 12 9 18" />
-            </svg>
-          </span>
-        </a>
+        <div class="read-more-flex">
+          <a href={`/product/${slug}`} class="read-more">
+            Læs mere
+            <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+              <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 6 15 12 9 18" />
+              </svg>
+            </span>
+          </a>
+        </div>
       </div>
     ))
   ) : (
@@ -40,17 +37,22 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
 }
 
 <style>
+  .read-more-flex {
+    display: flex;
+    justify-content: right;
+    padding-inline: 1.5rem;
+  }
   .card {
-    width: 400px;
-    min-width: 400px;
-    max-width: 400px;
+    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
     border-radius: 10px;
     background: #faedcd;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     gap: 20px;
-    padding: 1rem;
+    padding: 0.5rem;
     border: rgba(0, 0, 0, 0.15) 1px solid;
   }
 
@@ -58,14 +60,14 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
     border-radius: 10px;
   }
 
-  .card h5 {
+  .card h4 {
     padding-bottom: 10px;
-    min-height: 70px;
+    min-height: 50px;
   }
   img {
     max-width: 270px;
     height: 304px;
-    padding: 10px;
+    padding: 5px;
     justify-self: center;
     object-fit: contain;
   }
@@ -91,6 +93,11 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
     img {
       width: 478px;
       max-height: 494px;
+    }
+
+    .card h4 {
+      padding-bottom: 10px;
+      min-height: 90px;
     }
   }
 </style>

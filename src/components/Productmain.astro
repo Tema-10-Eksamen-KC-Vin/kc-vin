@@ -2,11 +2,16 @@
 const { bgcolor } = Astro.props;
 ---
 
-<div class={bgcolor}>
-  <div class="grid"><slot /></div>
-</div>
+<section>
+  <div class={bgcolor}>
+    <div class="grid"><slot /></div>
+  </div>
+</section>
 
 <style>
+  section {
+    background-color: var(--color-bg-red);
+  }
   .red {
     background: var(--color-bg-red);
     width: 100%;
@@ -21,13 +26,13 @@ const { bgcolor } = Astro.props;
     padding-left: 50px;
     padding-right: 50px;
   }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     .grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 0.9fr 2fr;
-      padding-bottom: 150px;
-      max-width: 1450px;
+      padding-bottom: 50px;
+      max-width: 1200px;
       margin: auto;
       gap: 0px 166px;
     }
