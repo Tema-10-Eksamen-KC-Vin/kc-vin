@@ -59,23 +59,85 @@ if (error) {
 <style>
   section {
     background: var(--color-bg-red);
-    padding-block: 6rem;
+    padding-block: 4rem 2rem;
   }
   .winelist-bg {
     position: relative;
     color: var(--color-white);
-    padding: 6rem 2rem 2rem 2rem;
+    padding: 3rem 1rem 2rem 1rem;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 60vh;
   }
   .winelist-content {
     position: relative;
     z-index: 1;
     max-width: 900px;
     margin: 0 auto;
-    min-height: 700px;
+    min-height: 400px;
+    padding: 0 0.5rem;
   }
-
+  .winelist-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    padding-block: 1.5rem;
+  }
+  .winelist-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #e5cfcf;
+    font-size: 1rem;
+  }
+  .producer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .producer-item {
+    border-bottom: 1px solid #fff2;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+  .producer-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .producer-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+    word-break: break-word;
+  }
+  .producer-name::first-letter {
+    font-family: var(--accentfont);
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .producer-desc {
+    color: #e5cfcf;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+    max-width: 100%;
+  }
+  .read-more {
+    margin-top: 0.8rem;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+  .read-more:hover {
+    color: var(--color-red-light);
+  }
   .bg-svg {
     position: absolute;
     opacity: 0.12;
@@ -83,102 +145,132 @@ if (error) {
     color: var(--color-red-light);
     pointer-events: none;
     transition: all 0.3s ease-in-out;
+    max-width: 40vw;
   }
-
   .bg-glass {
-    left: 250px;
-    top: 40px;
-    width: 200px;
+    left: 2vw;
+    top: 2vw;
+    width: 38vw;
   }
   .bg-cutlery {
-    left: 250px;
-    bottom: 150px;
-    width: 250px;
+    left: 2vw;
+    bottom: 60vh;
+    width: 36vw;
   }
   .bg-dish {
-    right: 250px;
-    top: 150px;
-    width: 250px;
+    right: 2vw;
+    top: 80vw;
+    width: 28vw;
   }
   .bg-bottle {
-    right: 300px;
-    bottom: 60px;
-    width: 140px;
-  }
-  .winelist-title {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    padding-block: 2rem;
-  }
-  .winelist-subtitle {
-    text-align: center;
-    margin-bottom: 4rem;
-    color: #e5cfcf;
-    font-size: 1.1rem;
-  }
-  .producer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-  .producer-item {
-    border-bottom: 1px solid #fff2;
-    padding-bottom: 2rem;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-  .producer-info {
-    flex: 1;
-  }
-  .producer-name {
-    font-size: 2rem;
-    margin-bottom: 0.2rem;
-  }
-  .producer-name::first-letter {
-    font-family: var(--accentfont);
-    font-size: 4rem;
-    font-weight: 400;
-    font-style: normal;
-  }
-  .producer-desc {
-    color: #e5cfcf;
-    font-size: 1rem;
+    right: 10vw;
+    bottom: 8vw;
+    width: 18vw;
   }
 
-  @media (max-width: 1000px) {
-    .producer-item {
-      flex-direction: column;
-      align-items: flex-start;
+  /* Tablet and up */
+  @media (min-width: 600px) {
+    .winelist-bg {
+      padding: 5rem 2rem 2rem 2rem;
+      min-height: 80vh;
     }
-    .winelist-content {
-      padding: 0 0.5rem;
-      min-height: unset;
+    .winelist-title {
+      font-size: 2.2rem;
+    }
+    .winelist-subtitle {
+      font-size: 1.1rem;
+    }
+    .producer-item {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 2rem;
+      padding-bottom: 2rem;
+    }
+    .producer-name {
+      font-size: 2rem;
+    }
+    .producer-name::first-letter {
+      font-size: 3.5rem;
+    }
+    .producer-desc {
+      font-size: 1.05rem;
+    }
+    .read-more {
+      font-size: 1.1rem;
+    }
+    .bg-glass,
+    .bg-cutlery,
+    .bg-dish,
+    .bg-bottle {
+      max-width: none;
     }
     .bg-glass {
-      left: 2vw;
-      top: 2vw;
-      width: 38vw;
-      max-width: none;
+      left: 120px;
+      top: 40px;
+      width: 200px;
     }
     .bg-cutlery {
-      left: 2vw;
-      bottom: 60vw;
-      width: 36vw;
-      max-width: none;
+      left: 100px;
+      bottom: 60vh;
+      width: 180px;
     }
     .bg-dish {
-      right: 2vw;
-      top: 80vw;
-      width: 28vw;
-      max-width: none;
+      right: 120px;
+      top: 150px;
+      width: 180px;
     }
     .bg-bottle {
-      right: 2vw;
-      bottom: 8vw;
-      width: 18vw;
-      max-width: none;
+      right: 80px;
+      bottom: 60px;
+      width: 120px;
+    }
+  }
+
+  /* Desktop and up */
+  @media (min-width: 1000px) {
+    .winelist-bg {
+      padding: 6rem 2rem 2rem 2rem;
+      min-height: 100vh;
+    }
+    .winelist-content {
+      min-height: 700px;
+      padding: 0;
+    }
+    .producer-list {
+      gap: 2.5rem;
+    }
+    .producer-item {
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .producer-name {
+      font-size: 2.5rem;
+    }
+    .producer-name::first-letter {
+      font-size: 4rem;
+    }
+    .producer-desc {
+      font-size: 1.1rem;
+    }
+    .bg-glass {
+      left: 250px;
+      top: 40px;
+      width: 200px;
+    }
+    .bg-cutlery {
+      left: 250px;
+      bottom: 60vh;
+      width: 250px;
+    }
+    .bg-dish {
+      right: 250px;
+      top: 150px;
+      width: 250px;
+    }
+    .bg-bottle {
+      right: 300px;
+      bottom: 60px;
+      width: 140px;
     }
   }
 </style>
