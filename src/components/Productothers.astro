@@ -7,7 +7,9 @@ const { subtitle } = Astro.props;
   <div class="center">
     <h2>{title}</h2>
     <p>{subtitle}</p>
-    <slot />
+    <div class="flex">
+      <slot />
+    </div>
   </div>
 </div>
 
@@ -28,8 +30,17 @@ const { subtitle } = Astro.props;
   }
   .center {
     align-content: center;
+    padding: 0px 20px 0px 20px;
   }
   p {
     padding-bottom: 40px;
+  }
+  .flex {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
   }
 </style>
