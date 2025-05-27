@@ -34,7 +34,8 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
 <style>
   .hero-header {
     position: relative;
-    height: 100vh;
+    max-height: 120vh;
+    height: 120vh;
     overflow: hidden;
     color: white;
     min-height: 100vh;
@@ -71,17 +72,17 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: start;
     height: 100%;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
+    gap: 40vh;
   }
 
   .hero-logo-title {
-    position: absolute;
-    top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,13 +96,11 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
   }
 
   .hero-text {
-    position: absolute;
-    bottom: 20%;
-    left: 2rem;
     text-align: left;
     max-width: 600px;
+    width: 80%;
+    margin: 0;
     transition: ease 0.3s;
-    max-width: 80%;
   }
 
   .company-title {
