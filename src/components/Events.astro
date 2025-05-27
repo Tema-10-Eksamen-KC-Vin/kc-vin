@@ -10,9 +10,9 @@ import Eventcard from "./Eventcard.astro";
     <p>Til vores vinsmagning får du mulighed for at smage på et nøje udvalgt sortiment af både klassiske og unikke vine. Det bliver en lærerig, hyggelig og smagfuld oplevelse for både nybegyndere og kendere.</p>
     <div class="content">
       <div class="categories">
-        <button>Kun vin</button>
-        <button>Vin og snacks</button>
-        <button>Vin og mad</button>
+        <button id="filter">Kun vin</button>
+        <button id="filter">Vin og snacks</button>
+        <button id="filter">Vin og mad</button>
       </div>
       <div class="events">
         <Eventcard color="beige" date="22 juni" header="Hvidvin og Rosé" name1="Kok Nikolaj Birch" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale vinvine i solen." />
@@ -44,11 +44,21 @@ import Eventcard from "./Eventcard.astro";
   }
   button {
     background-color: transparent;
-    border: none 2px var(--color-bg-beige);
+    border: none;
     border-radius: 5px;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 16px 2px 16px;
     margin: 0px 10px 0px 10px;
     color: var(--color-bg-beige);
+    margin-bottom: 15px;
+  }
+
+  .button_clicked {
+    background-color: var(--color-bg-beige);
+    border: none 2px var(--color-bg-beige);
+    border-radius: 5px;
+    padding: 2px 16px 2px 16px;
+    margin: 0px 10px 0px 10px;
+    color: var(--color-bg-red);
   }
 
   .events {
@@ -56,6 +66,7 @@ import Eventcard from "./Eventcard.astro";
     flex-direction: column;
     gap: 30px;
   }
+
   @media screen and (min-width: 800px) {
     .events {
       display: grid;
@@ -64,3 +75,13 @@ import Eventcard from "./Eventcard.astro";
     }
   }
 </style>
+
+<script>
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((button) => button.classList.remove("button_clicked"));
+      button.classList.add("button_clicked");
+    });
+  });
+</script>
