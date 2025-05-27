@@ -1,25 +1,37 @@
 ---
 import OmOsProfilcards from "./Om_os_profilcards.astro";
 import redlogo from "../assets/vektor/red_logo.svg";
+import profilbillede1 from "../assets/profilbillede_thomas.png";
 ---
 
-<section>
-  <h2>Hvem er Kahlenberg & Chrisiansen</h2>
-  <h6>Mød personerne bag firmaet</h6>
-  <div class="person-section">
-    <OmOsProfilcards header="Thomas Kahlenberg " text="Lidt om Thomas" />
-    <OmOsProfilcards header="Maria Kesby " text="Lidt om Maria" />
-  </div>
-  <div class="logo-section">
-    <div class="logo-container">
-      <img src={redlogo.src} alt="Company logo" class="logo" />
+<section class="background">
+  <div class="container">
+    <h2>Hvem er Kahlenberg & Chrisiansen</h2>
+    <h6>Mød personerne bag firmaet</h6>
+    <div class="person-section">
+      <OmOsProfilcards profilbillede={profilbillede1} header="Thomas Kahlenberg" text="Direktør" />
+      <OmOsProfilcards profilbillede={profilbillede1} header="Maria Kesby" text="Bestyrelsesformand" />
+    </div>
+    <div class="logo-section">
+      <div class="logo-container">
+        <img src={redlogo.src} alt="Company logo" class="logo" />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  section {
+  .background {
     background-color: var(--color-bg-red);
+    padding-block: 4rem;
+    padding-inline: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+    box-sizing: border-box;
     color: var(--color-white);
     position: relative;
     z-index: 1;
@@ -46,30 +58,25 @@ import redlogo from "../assets/vektor/red_logo.svg";
     height: auto;
   }
 
-  section {
-    padding-block: 50px;
-    padding-inline: 50px;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  h6 {
+    margin-bottom: 1rem;
   }
 
-  section h2 {
-    margin-bottom: 1rem;
-  }
-  section h6 {
-    margin-bottom: 1rem;
+  .person-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   @media (min-width: 800px) {
     .person-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
     }
-
-    section {
-      padding-block: 125px;
-      padding-inline: 175px;
-    }
-    section h6 {
+    h6 {
       margin-bottom: 4rem;
     }
   }

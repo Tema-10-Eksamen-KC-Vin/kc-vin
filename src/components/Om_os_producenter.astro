@@ -1,49 +1,75 @@
 ---
-
+import vinflasker from "../assets/vinflasker.png";
 ---
 
-<section>
-  <div class="img_section"><img src="/src/assets/vinflasker.png" alt="Vin billede" /></div>
-  <div class="indhold_section">
-    <h2>Udforsk udvalget fra vores vinproducenter</h2>
-    <p>Hvis i vil have mere information om vinproducenter og vin...</p>
-    <a href="#" class="read-more">
-      Læs mere
-      <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
-        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 6 15 12 9 18"></polyline>
-        </svg>
-      </span>
-    </a>
+<section class="section-bg">
+  <div class="container">
+    <div class="img_container">
+      <img src={vinflasker.src} alt="Vin billede" />
+    </div>
+    <div class="indhold_section">
+      <h2>Udforsk udvalget fra vores vinproducenter</h2>
+      <p>Hvis i vil have mere information om vinproducenter og vin...</p>
+      <a href="#" class="read-more">
+        Læs mere
+        <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 6 15 12 9 18"></polyline>
+          </svg>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 
 <style>
   a {
-    color: black;
+    color: var(--color-white);
   }
 
-  section {
-    background-color: var(--color-bg-beige);
-    background-image: url(/src/assets/omos_background2.png);
-    background-repeat: no-repeat;
-    height: 100vh;
+  .section-bg {
+    background-color: var(--color-bg-red);
+    width: 100%;
   }
 
-  .img_section {
-    width: 75%;
-    height: auto;
-    padding: 50px;
-  }
-
-  .indhold_section {
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    padding-block: 4rem;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
-    padding-block: 50px;
-    padding-inline: 50px;
-    height: auto;
+    align-items: center;
+    gap: 2rem;
+    min-height: 500px;
+  }
+
+  .img_container {
+    order: 2;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .img_container img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+  }
+
+  .indhold_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    order: 1;
+    color: var(--color-white);
+    max-width: 500px;
   }
 
   p {
@@ -51,40 +77,33 @@
   }
 
   h2 {
-    width: auto;
     line-height: 2rem;
     font-size: 2rem;
   }
 
   @media (min-width: 800px) {
-    section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      height: 45vw;
-    }
-    .img_section {
-      width: 100%;
-      height: 100%;
-      padding: 50px;
+    .container {
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
     }
 
+    .img_container {
+      order: 1;
+    }
+    .img_container,
     .indhold_section {
-      /* padding-inline: 0; */
+      width: auto;
     }
     h2 {
-      width: auto;
       line-height: 4rem;
     }
   }
+
   @media (max-width: 400px) {
     h2 {
-      width: auto;
       line-height: 2rem;
-    }
-    .img_section {
-      width: 100%;
-      height: auto;
     }
   }
 
