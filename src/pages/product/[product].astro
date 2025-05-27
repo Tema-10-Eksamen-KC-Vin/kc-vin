@@ -51,7 +51,7 @@ console.log("Producers data:", producers);
       {producers.wine_img[1] && <Winecard img={producers.wine_img[1]} wine={producers.wine1title} subtitle1={producers.wine1type} desc={producers.wine1desc} />}
       {producers.wine_img[2] && <Winecard img={producers.wine_img[2]} wine={producers.wine2title} subtitle1={producers.wine2type} desc={producers.wine2desc} />}
       {producers.wine_img[3] && <Winecard img={producers.wine_img[3]} wine={producers.wine3title} subtitle1={producers.wine3type} desc={producers.wine3desc} />}
-      <Udvalgtevinebutton link={producers.producerlink} linktekst=`Læs mere om ${producers.name}` />
+      {producers.producerlink && <Udvalgtevinebutton link={producers.producerlink} linktekst=`Læs mere om ${producers.name}` />}
     </Udvalgtevine>
   </Productmain>
   <Productsection> <Udvalgtevinebutton link="/event" linktekst="Tilmeld Vinsmagning" /></Productsection>

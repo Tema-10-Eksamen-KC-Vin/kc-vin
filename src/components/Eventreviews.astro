@@ -4,14 +4,16 @@ import Eventreviewcards from "./Eventreviewcards.astro";
 
 <section>
   <div class="max-width">
-    <div class="gallery-fade gallery-fade-left"></div>
-    <div class="gallery-fade gallery-fade-right"></div>
     <h4>Vurderinger fra tidligere gæster:</h4>
-    <div class="anmeldelser" id="product-flex">
-      <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Frederikke Skovsen" />
-      <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Melanie Flemmingsen" />
-      <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Ashraf Melano" />
-      <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Ashraf Melano" />
+    <div class="grid">
+      <div class="gallery-fade gallery-fade-left"></div>
+      <div class="gallery-fade gallery-fade-right"></div>
+      <div class="anmeldelser" id="product-flex">
+        <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Frederikke Skovsen" />
+        <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Melanie Flemmingsen" />
+        <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Ashraf Melano" />
+        <Eventreviewcards text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare" name="Ashraf Melano" />
+      </div>
     </div>
     <div class="scroll-progress-bar">
       <div class="scroll-progress" id="scroll-progress"></div>
@@ -20,6 +22,11 @@ import Eventreviewcards from "./Eventreviewcards.astro";
 </section>
 
 <style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
   section {
     background-color: var(--color-bg-beige);
     height: 600px;
@@ -27,19 +34,19 @@ import Eventreviewcards from "./Eventreviewcards.astro";
   }
 
   section {
-    background-image: url(/src/assets/vektor/logo_gren.png), url(/src/assets/vektor/logo_vindruer.png);
-    background-position:
-      top left,
-      top right;
+    background-image: url(/src/assets/vektor/logo_gren.png);
+    background-position: top left;
 
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat;
   }
-
   @media screen and (min-width: 800px) {
-    .anmeldelser {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 20px;
+    section {
+      background-image: url(/src/assets/vektor/logo_gren.png), url(/src/assets/vektor/logo_vindruer.png);
+      background-position:
+        top left,
+        top right;
+
+      background-repeat: no-repeat, no-repeat;
     }
   }
 
@@ -48,6 +55,9 @@ import Eventreviewcards from "./Eventreviewcards.astro";
     overflow-x: auto;
     gap: 40px;
     scrollbar-width: none;
+    grid-column: 1 /2;
+    grid-row: 1 / 2;
+    width: 100%;
   }
 
   h4 {
@@ -59,19 +69,28 @@ import Eventreviewcards from "./Eventreviewcards.astro";
     margin: auto;
   }
   .gallery-fade {
-    position: absolute;
     z-index: 1000;
-    top: 0;
-    bottom: 0;
-    width: 100px;
+    width: 20px;
     pointer-events: none;
   }
+
+  @media screen and (min-width: 800px) {
+    .gallery-fade {
+      z-index: 1000;
+      width: 100px;
+      pointer-events: none;
+    }
+  }
+
   .gallery-fade-left {
-    left: 0;
+    grid-column: 1 /2;
+    grid-row: 1 / 2;
     background: linear-gradient(to right, var(--color-bg-beige) 0%, transparent 100%);
   }
   .gallery-fade-right {
-    right: 0;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-self: flex-end;
     background: linear-gradient(to left, var(--color-bg-beige) 0%, transparent 100%);
   }
   .scroll-progress-bar {
