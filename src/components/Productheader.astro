@@ -64,7 +64,8 @@ const { img } = Astro.props;
     grid-column: 1 / 2;
     width: 100%;
     height: 648px;
-    object-fit: cover;
+    object-fit: contain;
+    filter: brightness(0.5);
   }
   .headercontent {
     color: var(--color-white);
