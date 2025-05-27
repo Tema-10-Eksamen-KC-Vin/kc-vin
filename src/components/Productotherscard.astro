@@ -21,7 +21,7 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
       <div class="card">
         <img src={logo} alt="" />
         <div class="content">
-          <h3>{name}</h3>
+          <h5>{name}</h5>
           <p>{description}</p>
         </div>
         <a href={`/product/${slug}`} class="read-more">
@@ -41,12 +41,26 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
 
 <style>
   .card {
-    width: 500px;
-    border-radius: 5px;
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    border-radius: 10px;
     background: #faedcd;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 1rem;
+    border: rgba(0, 0, 0, 0.15) 1px solid;
+  }
+
+  .card img {
+    border-radius: 10px;
+  }
+
+  .card h5 {
+    padding-bottom: 10px;
+    min-height: 70px;
   }
   img {
     max-width: 270px;

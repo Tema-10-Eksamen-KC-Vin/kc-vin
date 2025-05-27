@@ -4,11 +4,18 @@ const { subtitle } = Astro.props;
 ---
 
 <div class="background">
+  <div class="gallery-fade gallery-fade-left"></div>
+  <div class="gallery-fade gallery-fade-right"></div>
   <div class="center">
-    <h2>{title}</h2>
-    <p>{subtitle}</p>
-    <div class="flex">
+    <div class="text">
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+    <div class="flex" id="product-flex">
       <slot />
+    </div>
+    <div class="scroll-progress-bar">
+      <div class="scroll-progress" id="scroll-progress"></div>
     </div>
   </div>
 </div>
@@ -16,7 +23,7 @@ const { subtitle } = Astro.props;
 <style>
   @media screen and (min-width: 800px) {
     .center {
-      max-width: 1600px;
+      max-width: 100%;
       margin: auto;
       width: 100%;
     }
@@ -27,20 +34,79 @@ const { subtitle } = Astro.props;
     width: 100%;
     padding: 100px 0px 200px 0px;
     background-size: cover;
+    position: relative;
   }
   .center {
     align-content: center;
     padding: 0px 20px 0px 20px;
   }
+
+  .text {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
   p {
     padding-bottom: 40px;
   }
   .flex {
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 30px;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
     padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+
+  .gallery-fade {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    pointer-events: none;
+  }
+  .gallery-fade-left {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-beige) 0%, transparent 100%);
+  }
+  .gallery-fade-right {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-beige) 0%, transparent 100%);
+  }
+  .scroll-progress-bar {
+    width: 80%;
+    height: 6px;
+    background: #f5f5dc;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+  .scroll-progress {
+    height: 100%;
+    width: 0%;
+    background: var(--color-red-light);
+    transition: width 0.2s;
+    border-radius: 3px;
   }
 </style>
+
+<script>
+  if (typeof window !== "undefined") {
+    const flex = document.getElementById("product-flex");
+    const progress = document.getElementById("scroll-progress");
+    if (flex && progress) {
+      const updateProgress = () => {
+        const maxScroll = flex.scrollWidth - flex.clientWidth;
+        const percent = maxScroll > 0 ? (flex.scrollLeft / maxScroll) * 100 : 0;
+        progress.style.width = percent + "%";
+      };
+      flex.addEventListener("scroll", updateProgress);
+      window.addEventListener("resize", updateProgress);
+      // Initialize on load
+      updateProgress();
+    }
+  }
+</script>
