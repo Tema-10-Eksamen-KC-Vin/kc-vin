@@ -38,6 +38,8 @@ const { data: producers, error } = await supabase.from("Winelist").select("*").e
 if (error) {
   console.error("Supabase fetch error:", error);
 }
+
+console.log("Producers data:", producers);
 ---
 
 <Layout>
@@ -46,9 +48,9 @@ if (error) {
     <Productmainsection producentNavn={producers.name} desc={producers.description} special1={producers.wine_types[1]} special2={producers.wine_types[2]} special3={producers.wine_types[3]} />
     <Winearea img={producers.kort} areas={producers.region} />
     <Udvalgtevine title="Udvalgte vine fra producenten">
-      {producers.wine_img[1] && <Winecard img={producers.wine_img[1]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />}
-      {producers.wine_img[2] && <Winecard img={producers.wine_img[2]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />}
-      {producers.wine_img[3] && <Winecard img={producers.wine_img[3]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />}
+      {producers.wine_img[1] && <Winecard img={producers.wine_img[1]} wine={producers.wine1title} subtitle1={producers.wine1type} desc={producers.wine1desc} />}
+      {producers.wine_img[2] && <Winecard img={producers.wine_img[2]} wine={producers.wine2title} subtitle1={producers.wine2type} desc={producers.wine2desc} />}
+      {producers.wine_img[3] && <Winecard img={producers.wine_img[3]} wine={producers.wine3title} subtitle1={producers.wine3type} desc={producers.wine3desc} />}
       <Udvalgtevinebutton link={producers.producerlink} linktekst=`Læs mere om ${producers.name}` />
     </Udvalgtevine>
   </Productmain>
