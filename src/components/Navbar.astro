@@ -70,7 +70,7 @@ const groupedProducers = groupByLandAndRegion(producers || []);
                         <ul class="column-list">
                           {producers.map((producer) => (
                             <li>
-                              <a href={`/producent/${producer.slug}`} class="dropdown-link">
+                              <a href={`/product/${producer.slug}`} class="dropdown-link">
                                 {producer.name}
                               </a>
                             </li>
@@ -232,7 +232,6 @@ const groupedProducers = groupByLandAndRegion(producers || []);
   .nav-link.active,
   .dropdown-trigger.active {
     font-weight: 900;
-    color: var(--color-beige);
   }
 
   /* Dropdown */
