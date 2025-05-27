@@ -3,50 +3,44 @@ import Eventcard from "./Eventcard.astro";
 ---
 
 <article>
-  <div>
-    
-  </div>
-  <h5>Nyheder</h5>
-  <h2>Vinsmagninger og andre oplevelser</h2>
-  <p>Til vores vinsmagning får du mulighed for at smage på et nøje udvalgt sortiment af både klassiske og unikke vine. Det bliver en lærerig, hyggelig og smagfuld oplevelse for både nybegyndere og kendere.</p>
-  <div class="content">
-    
-    <div class="categories">
-      <button>Kun vin</button>
-      <button>Vin og snacks</button>
-      <button>Vin og mad</button>
-    </div>
-    <div class="events">
-      <Eventcard color="beige" date="22 juni" header="Hvidvin og Rosé" name1="Kok Nikolaj Birch" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale vinvine i solen." />
-      <Eventcard date="7 juli" header="Barolo aften" name1="Kasper Kahlenberg" name2="Jesper Wiinberg" text="Oplev specielle vine, med fyldig og kraftige smage, mens vi guider jer gennem historierne fra flaskerne." />
-      <Eventcard date="18 august" header="Fuld vinsmagnings oplevelse" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Lad passion og håndværk tage dig på en rejse gennem vinens verden - for både nysgerrige sjæle og erfarne vinkendere." />
+  <div class="width">
+    <div></div>
+    <h5>Nyheder</h5>
+    <h2>Vinsmagninger og andre oplevelser</h2>
+    <p>Til vores vinsmagning får du mulighed for at smage på et nøje udvalgt sortiment af både klassiske og unikke vine. Det bliver en lærerig, hyggelig og smagfuld oplevelse for både nybegyndere og kendere.</p>
+    <div class="content">
+      <div class="categories">
+        <button>Kun vin</button>
+        <button>Vin og snacks</button>
+        <button>Vin og mad</button>
+      </div>
+      <div class="events">
+        <Eventcard color="beige" date="22 juni" header="Hvidvin og Rosé" name1="Kok Nikolaj Birch" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale vinvine i solen." />
+        <Eventcard date="7 juli" header="Barolo aften" name1="Kasper Kahlenberg" name2="Jesper Wiinberg" text="Oplev specielle vine, med fyldig og kraftige smage, mens vi guider jer gennem historierne fra flaskerne." />
+        <Eventcard date="18 august" header="Fuld vinsmagnings oplevelse" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Lad passion og håndværk tage dig på en rejse gennem vinens verden - for både nysgerrige sjæle og erfarne vinkendere." />
+      </div>
     </div>
   </div>
 </article>
 
 <style>
-  .content {
-    max-width: 1600px;
+  .width {
+    max-width: 1250px;
     margin: auto;
     padding: 0px 20px 0px 20px;
-    padding-top: 50px;
   }
   h5 {
     padding-bottom: 16px;
-    padding-left: 5vw;
-  }
-  h2 {
-    padding-left: 5vw;
   }
   p {
-    padding-bottom: 80px;
     padding-top: 24px;
-    padding-left: 5vw;
+    padding-bottom: 40px;
   }
   article {
     background-color: var(--color-bg-red);
     color: var(--color-white);
     padding-bottom: 120px;
+    padding-top: 120px;
   }
   button {
     background-color: transparent;
