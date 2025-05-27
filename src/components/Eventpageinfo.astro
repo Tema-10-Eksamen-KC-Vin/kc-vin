@@ -1,7 +1,9 @@
 ---
 const { info } = Astro.props;
 const { program } = Astro.props;
-const { specifikationer } = Astro.props;
+const { specifikationer1 } = Astro.props;
+const { specifikationer2 } = Astro.props;
+const { specifikationer3 } = Astro.props;
 const { pris } = Astro.props;
 ---
 
@@ -14,19 +16,24 @@ const { pris } = Astro.props;
   <p>{program}</p>
   <br />
   <h4>Specifikationer:</h4>
-  <p>{specifikationer}</p>
+  <p>{specifikationer1}</p>
+  <p>{specifikationer2}</p>
+  <p>{specifikationer3}</p>
   <br />
   <p>Pris pr. person: {pris},-</p>
 </div>
 
 <style>
   h2 {
-    padding-bottom: 46px;
+    padding-bottom: 16px;
   }
   div {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     max-width: 560px;
     padding-bottom: 50px;
+  }
+  h4 {
+    padding-top: 30px;
   }
 </style>
