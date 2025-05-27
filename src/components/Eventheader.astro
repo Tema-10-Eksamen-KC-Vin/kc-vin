@@ -1,124 +1,62 @@
 ---
 import Navbar from "./Navbar.astro";
-import heroVideo from "../assets/kc-wine.mp4";
-import logo from "../assets/vektor/kc-bw-logo.svg";
+import { Image } from "astro:assets";
+import Eventhero from "../assets/eventhero.png";
 ---
 
-<header class="hero-header">
-  <nav class="navbar">
-    <Navbar />
-  </nav>
-
-  <div class="hero-video-container">
-    <video class="hero-video" autoplay muted loop>
-      <source src={heroVideo} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-logo-title">
-      <h1 class="company-title">
-        <span class="accentfont">K</span>ahlenberg & <span class="accentfont">C</span>hristiansen
-      </h1>
-      <img src={logo.src} alt="Kahlenberg & Christiansen Logo" class="hero-logo" />
+<header>
+  <div class="headergrid">
+    <nav class="navbar">
+      <Navbar />
+    </nav>
+    <div class="redoverlay">
+      <div class="headercontent">
+        <h1>Nye vinsmagnings events</h1>
+        <p>Leder du efter en ny oplevelse, meld dig til vores vinsmagninger og få en uforglemmelig aften med unikke vin.</p>
+      </div>
     </div>
-    <div class="hero-text">
-      <h2 class="hero-heading">Udvalgte vine med karakter - direkte til jeres vinliste.</h2>
-      <p class="hero-subtext">Vi importerer nøje udvalgte vine fra passionerede vinbønder i Europa og videreformidler dem til restauranter, der værdsætter håndværk, terroir og personlighed i glasset.</p>
-    </div>
+    <Image src={Eventhero} alt="" />
   </div>
 </header>
 
 <style>
-  .hero-header {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    color: white;
-    min-height: 100vh;
-  }
-
-  .hero-video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .redoverlay {
+    background: linear-gradient(180deg, rgba(65, 20, 21, 0) 0%, rgba(65, 20, 21, 1) 100%);
     width: 100%;
-    height: 100%;
+    height: 500px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
     z-index: 1;
   }
-
-  .hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
-  }
-
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(65, 20, 21, 0) 0%, rgba(65, 20, 21, 1) 100%);
-    z-index: 2;
-  }
-
-  .hero-content {
+  .headergrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-height: 100vh;
+    overflow: hidden;
   }
-
-  .hero-logo-title {
+  .navbar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  img {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+  .headercontent {
     position: absolute;
-    top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    bottom: 30px;
+
+    color: white;
+    z-index: 2;
+    padding-left: 5vw;
+    padding-bottom: 2vw;
+    padding-right: 15vw;
   }
 
-  .hero-logo {
-    width: 200px;
-    height: auto;
-    margin-bottom: 0.5rem;
-    transition: ease 0.3s;
-  }
-
-  .hero-text {
-    position: absolute;
-    bottom: 20%;
-    left: 2rem;
-    text-align: left;
-    max-width: 600px;
-    transition: ease 0.3s;
-    max-width: 80%;
-  }
-
-  .hero-heading {
-    margin-bottom: 1rem;
-  }
-
-  .hero-subtext {
-    line-height: 1.6;
-    color: #d1d5db;
-  }
-
-  @media (min-width: 768px) {
-    .hero-logo {
-      width: 300px;
-      height: auto;
-      margin-bottom: 0.5rem;
-      transition: ease 0.3s;
-    }
-  }
+  
 </style>
