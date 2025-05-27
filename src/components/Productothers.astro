@@ -23,13 +23,6 @@ const { subtitle } = Astro.props;
 </div>
 
 <style>
-  @media screen and (min-width: 800px) {
-    .center {
-      max-width: 100%;
-      margin: auto;
-      width: 100%;
-    }
-  }
   .background {
     background: url(../assets/producent_background.webp);
     background-size: contain;
@@ -72,7 +65,7 @@ const { subtitle } = Astro.props;
     overflow-y: hidden;
     padding-bottom: 10px;
     scrollbar-width: none;
-    padding-inline: 2rem;
+    padding-inline: 4rem;
   }
 
   .gallery-fade {
@@ -106,6 +99,14 @@ const { subtitle } = Astro.props;
     background: var(--color-red-light);
     transition: width 0.2s;
     border-radius: 3px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .center {
+      max-width: 100%;
+      margin: auto;
+      width: 100%;
+    }
   }
 </style>
 
