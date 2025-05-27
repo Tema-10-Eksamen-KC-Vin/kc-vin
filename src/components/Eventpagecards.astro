@@ -2,7 +2,7 @@
 import Eventcard from "./Eventcard.astro";
 ---
 
-<div class="flex">
+<div class="grid">
   <Eventcard date="22 juni" header="Hvidvin og Rosé" name1="Kok Nikolaj Birch" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale vinvine i solen." />
   <Eventcard date="7 juli" header="Barolo aften" name1="Kasper Kahlenberg" name2="Jesper Wiinberg" text="Oplev specielle vine, med fyldig og kraftige smage, mens vi guider jer gennem historierne fra flaskerne." />
   <Eventcard date="18 august" header="Fuld vinsmagnings oplevelse" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Lad passion og håndværk tage dig på en rejse gennem vinens verden - for både nysgerrige sjæle og erfarne vinkendere." />
@@ -10,15 +10,14 @@ import Eventcard from "./Eventcard.astro";
 
 <style>
   @media screen and (min-width: 800px) {
-    .flex {
+    .grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
+      justify-content: space-evenly;
+      max-width: 1300px;
+      margin: auto;
+      grid-template-rows: auto auto;
     }
-  }
-  .flex {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
   }
 </style>
