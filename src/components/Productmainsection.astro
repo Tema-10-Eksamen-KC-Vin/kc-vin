@@ -13,9 +13,9 @@ const { special3 } = Astro.props;
   <br />
   <h5>Specialiteter</h5>
   <ul>
-    <li>{special1}</li>
-    <li>{special2}</li>
-    <li>{special3}</li>
+    {special1 && <li>{special1}</li>}
+    {special2 && <li>{special2}</li>}
+    {special3 && <li>{special3}</li>}
   </ul>
 </div>
 

@@ -46,10 +46,10 @@ if (error) {
     <Productmainsection producentNavn={producers.name} desc={producers.description} special1={producers.wine_types[1]} special2={producers.wine_types[2]} special3={producers.wine_types[3]} />
     <Winearea img={producers.kort} areas={producers.region} />
     <Udvalgtevine title="Udvalgte vine fra producenten">
-      <Winecard img={producers.wine_img[1]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
-      <Winecard img={producers.wine_img[2]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
-      <Winecard img={producers.wine_img[3]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
-      <Udvalgtevinebutton link="https://www.giovannirosso.com/it/" linktekst=`Læs mere om ${producers.name}` />
+      {producers.wine_img[1] && <Winecard img={producers.wine_img[1]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />}
+      {producers.wine_img[2] && <Winecard img={producers.wine_img[2]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />}
+      {producers.wine_img[3] && <Winecard img={producers.wine_img[3]} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />}
+      <Udvalgtevinebutton link={producers.producerlink} linktekst=`Læs mere om ${producers.name}` />
     </Udvalgtevine>
   </Productmain>
   <Productsection> <Udvalgtevinebutton link="/event" linktekst="Tilmeld Vinsmagning" /></Productsection>
