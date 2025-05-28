@@ -28,7 +28,7 @@ const { subtitle } = Astro.props;
     background-size: contain;
     height: auto;
     width: 100%;
-    height: 1000px;
+    height: 4500px;
     background-size: cover;
     position: relative;
   }
@@ -106,6 +106,16 @@ const { subtitle } = Astro.props;
       max-width: 100%;
       margin: auto;
       width: 100%;
+    }
+
+    .background {
+      height: 1500px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .background {
+      height: 3000px;
     }
   }
 </style>

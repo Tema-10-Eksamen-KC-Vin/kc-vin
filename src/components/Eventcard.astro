@@ -1,11 +1,11 @@
 ---
-const { date, header, name1, name2, text } = Astro.props;
+const { date, header, name1, name2, text, image } = Astro.props;
 
 import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
 ---
 
 <article>
-  <img src="/image.png" alt="Billede" />
+  <img src={image} alt="Billede" />
   <h6>{date}</h6>
   <h4>{header}</h4>
   <div class="content">
@@ -30,7 +30,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
     background-color: var(--color-red-light);
     border-radius: 7px;
     display: grid;
-    grid-template-columns: subgrid;
+    /* grid-template-columns: subgrid; */
     grid-template-rows: subgrid;
     grid-row: 1 / 7;
     gap: 40px;

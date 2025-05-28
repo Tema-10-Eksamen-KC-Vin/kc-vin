@@ -3,12 +3,21 @@ import Eventcard from "./Eventcard.astro";
 ---
 
 <div class="grid">
-  <Eventcard date="22 juni" header="Hvidvin og Rosé" name1="Kok Nikolaj Birch" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale vinvine i solen." />
-  <Eventcard date="7 juli" header="Barolo aften" name1="Kasper Kahlenberg" name2="Jesper Wiinberg" text="Oplev specielle vine, med fyldig og kraftige smage, mens vi guider jer gennem historierne fra flaskerne." />
-  <Eventcard date="18 august" header="Fuld vinsmagnings oplevelse" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Lad passion og håndværk tage dig på en rejse gennem vinens verden - for både nysgerrige sjæle og erfarne vinkendere." />
+  <Eventcard color="beige" date="22 juni" header="Hvidvin og Rosé aften på terassen" name1="Maria Kesby" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale hvidvine samt rosévine i solen." image="/src/assets/event_img1.png" />
+  <Eventcard date="27 September" header="Champagne og små anretninger" name1="Kasper Kahlenberg" name2="Kahlenberg & Christiansen" text="Kom med til en aften i særklasse, når vi inviterer til en eksklusiv champagnesmagning akkompagneret af delikate små anretninger." image="/src/assets/event_img5.png" />
+  <Eventcard date="18 august" header="5-retters menu og vinmenu på Søllerød Kro" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Vi inviterer dig til en eksklusiv aften med sublime smagsoplevelser. Kokkene fra Søllerød Kro har sammensat en 5-retters menu med fokus på sæsonens bedste råvarer, og vi har været i vinkælderen og finde noget særligt frem til aftenen." image="/src/assets/event_img4.png" />
 </div>
 
 <style>
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 20px 40px 20px;
+  }
+
   @media screen and (min-width: 800px) {
     .grid {
       display: grid;
@@ -18,6 +27,13 @@ import Eventcard from "./Eventcard.astro";
       max-width: 1300px;
       margin: auto;
       grid-template-rows: auto auto;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .grid {
+      flex-wrap: wrap;
+      gap: 20px;
     }
   }
 </style>
