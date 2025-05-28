@@ -1,11 +1,11 @@
 ---
-const { date, header, name1, name2, text, image } = Astro.props;
+const { date, header, name1, name2, text, eventimg } = Astro.props;
 
 import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
 ---
 
 <article>
-  <img src={image} alt="Billede" />
+  <img src={eventimg.src} alt=" Profilbillede" loading="lazy" />
   <h6>{date}</h6>
   <h4>{header}</h4>
   <div class="content">
