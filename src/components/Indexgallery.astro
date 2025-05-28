@@ -75,11 +75,16 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
   </div>
   <style>
     /* Mobile-first base styles */
+    section {
+      height: 700px;
+      min-height: 700px;
+      max-height: 700px;
+    }
     .gallery-section {
       background: #f9eed2;
       padding: 5rem 1rem 2rem 1rem;
       position: relative;
-      min-height: 60svh;
+      min-height: 700px;
       overflow: hidden;
     }
     .gallery-svg {
@@ -227,9 +232,11 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
       .gallery-slider {
         gap: 2rem;
       }
-      .gallery-section {
-        height: 50vh;
-        min-height: 30svh;
+
+      section {
+        height: 700px;
+        min-height: 700px;
+        max-height: 700px;
       }
     }
 
@@ -253,9 +260,12 @@ const images = ["https://images.unsplash.com/photo-1506744038136-46273834b3fb?au
         padding: 0 2vw;
       }
       .gallery-section {
-        height: 60vh;
-        min-height: 60svh;
         padding-top: 2rem;
+      }
+      section {
+        height: 700px;
+        min-height: 700px;
+        max-height: 700px;
       }
     }
   </style>

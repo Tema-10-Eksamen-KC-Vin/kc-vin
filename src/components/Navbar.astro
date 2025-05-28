@@ -607,6 +607,14 @@ const groupedProducers = groupByLandAndRegion(producers || []);
       });
     }
 
+    document.addEventListener("mousedown", (event) => {
+      const isMenuOpen = mobileMenu.classList.contains("active");
+      if (isMenuOpen && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+        mobileMenuButton.classList.remove("active");
+        mobileMenu.classList.remove("active");
+      }
+    });
+
     // Force reload for dynamic producer links
     document.querySelectorAll(".dropdown-link, .mobile-dropdown-link").forEach((link) => {
       link.addEventListener("click", function (e) {
