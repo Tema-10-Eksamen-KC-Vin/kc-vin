@@ -1,8 +1,9 @@
 ---
 import Infocard from "./Infocard.astro";
-import svg1 from "../assets/icon/iconkontakt.svg"
-import svg2 from "../assets/icon/iconlocation.svg"
-import svg3 from "../assets/icon/iconmail.svg"
+
+const svg1 = "/icon/iconmail.svg";
+const svg2 = "/icon/iconkontakt.svg";
+const svg3 = "/icon/iconlocation.svg";
 ---
 
 <section>
@@ -24,7 +25,8 @@ import svg3 from "../assets/icon/iconmail.svg"
   section {
     background-image: url(/src/assets/infocardbaggrund.webp);
     background-size: cover;
-    padding: 4rem;
+    padding: 1rem;
+    padding-block: 4rem;
     width: 100%;
   }
 
@@ -35,7 +37,6 @@ import svg3 from "../assets/icon/iconmail.svg"
   .infobody {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 70px;
   }
 
   .kontaktinfo {

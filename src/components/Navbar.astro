@@ -118,7 +118,11 @@ const groupedProducers = groupByLandAndRegion(producers || []);
 
       <!-- Mobil dropdown -->
       <div class="mobile-dropdown">
-        <button id="mobile-dropdown-button" class={`mobile-dropdown-button${currentPath.startsWith("/producent") ? " active" : ""}`}> Producentliste </button>
+        <button id="mobile-dropdown-button" class={`mobile-dropdown-button${currentPath.startsWith("/producent") ? " active" : ""}`}>
+          Producentliste <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg></button
+        >
 
         <div id="mobile-dropdown-content" class="mobile-dropdown-content">
           <div class="mobile-dropdown-inner">
