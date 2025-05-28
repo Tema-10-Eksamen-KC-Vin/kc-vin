@@ -28,7 +28,7 @@ const { subtitle } = Astro.props;
     background-size: contain;
     height: auto;
     width: 100%;
-    height: 4500px;
+    height: 3200px;
     background-size: cover;
     position: relative;
   }
@@ -101,7 +101,7 @@ const { subtitle } = Astro.props;
     border-radius: 3px;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1000px) {
     .center {
       max-width: 100%;
       margin: auto;
@@ -111,11 +111,19 @@ const { subtitle } = Astro.props;
     .background {
       height: 1500px;
     }
+
+    .flex {
+      padding-inline: 0;
+    }
   }
 
   @media screen and (max-width: 400px) {
     .background {
-      height: 3000px;
+      height: 3550px;
+    }
+
+    .flex {
+      padding-inline: 0;
     }
   }
 </style>
