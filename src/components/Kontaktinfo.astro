@@ -1,5 +1,8 @@
 ---
 import Infocard from "./Infocard.astro";
+import svg1 from "../assets/icon/iconkontakt.svg"
+import svg2 from "../assets/icon/iconlocation.svg"
+import svg3 from "../assets/icon/iconmail.svg"
 ---
 
 <section>
@@ -10,9 +13,9 @@ import Infocard from "./Infocard.astro";
     </div>
 
     <div class="kontaktinfo">
-      <Infocard class="infocard" text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" linktext="info@kahlenbergchristiansen.dk" link="mailto:info@kahlenbergchristiansen.dk" />
-      <Infocard class="infocard" text=" Har du spørgsmål eller brug for vejledning? Giv os et kald, vi står klar til at hjælpe dig med alt fra bestilling til vinsmagning." header="Telefon" linktext="+45 24 26 43 48" link="tel:+4524264348" />
-      <Infocard class="infocard" text=" Du finder os i hjertet af Kerteminde, her skaber vi vinoplevelser med passion og omtanke" header="Kontor" linktext="Kohaven 15, 5300 Kerteminde" link="" />
+      <Infocard class="infocard" text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" linktext="info@kahlenbergchristiansen.dk" link="mailto:info@kahlenbergchristiansen.dk" svg={svg1} />
+      <Infocard class="infocard" text=" Har du spørgsmål eller brug for vejledning? Giv os et kald, vi står klar til at hjælpe dig med alt fra bestilling til vinsmagning." header="Telefon" linktext="+45 24 26 43 48" link="tel:+4524264348" svg={svg2} />
+      <Infocard class="infocard" text=" Du finder os i hjertet af Kerteminde, her skaber vi vinoplevelser med passion og omtanke" header="Kontor" linktext="Kohaven 15, 5300 Kerteminde" link="" svg={svg3} />
     </div>
   </div>
 </section>

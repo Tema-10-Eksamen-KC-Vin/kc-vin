@@ -1,9 +1,9 @@
 ---
-const { text, header, linktext, link } = Astro.props;
+const { svg, text, header, linktext, link } = Astro.props;
 ---
 
 <article>
-  <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+  <a href="#">{svg}</a>
   <h2>{header}</h2>
   <p>{text}</p>
   <a href="{link}"><h6>{linktext}</h6></a>
