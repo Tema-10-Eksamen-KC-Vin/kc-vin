@@ -2,16 +2,11 @@
 const { bgcolor } = Astro.props;
 ---
 
-<section>
-  <div class={bgcolor}>
-    <div class="grid"><slot /></div>
-  </div>
+<section class={bgcolor}>
+  <div class="grid"><slot /></div>
 </section>
 
 <style>
-  section {
-    background-color: var(--color-bg-red);
-  }
   .red {
     background: var(--color-bg-red);
     width: 100%;
