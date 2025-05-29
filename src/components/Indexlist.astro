@@ -28,20 +28,22 @@ if (error) {
         {
           producers && producers.length > 0 ? (
             producers.map(({ slug, name, description }) => (
-              <div class="producer-item">
-                <div class="producer-info">
-                  <h3 class="producer-name">{name}</h3>
-                  <div class="producer-desc">{description}</div>
+              <a href={`/product/${slug}`} class="read-more">
+                <div class="producer-item">
+                  <div class="producer-info">
+                    <h3 class="producer-name">{name}</h3>
+                    <div class="producer-desc">{description}</div>
+                  </div>
+                  <div class="read-more">
+                    Læs mere
+                    <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
+                      <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 6 15 12 9 18" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-                <a href={`/product/${slug}`} class="read-more">
-                  Læs mere
-                  <span aria-hidden="true" style="display:inline-block; width:1em; height:1em;">
-                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="9 6 15 12 9 18" />
-                    </svg>
-                  </span>
-                </a>
-              </div>
+              </a>
             ))
           ) : (
             <div>Ingen producenter fundet.</div>
@@ -79,6 +81,7 @@ if (error) {
     text-align: center;
     margin-bottom: 0.5rem;
     padding-block: 1.5rem;
+    font-size: 2.25rem;
   }
   .winelist-subtitle {
     text-align: center;
@@ -92,7 +95,7 @@ if (error) {
     gap: 2rem;
   }
   .producer-item {
-    border-bottom: 1px solid #fff2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -135,7 +138,7 @@ if (error) {
     transition: color 0.2s;
   }
   .read-more:hover {
-    color: var(--color-red-light);
+    color: var(--color-beige);
   }
   .bg-svg {
     position: absolute;
@@ -172,9 +175,6 @@ if (error) {
     .winelist-bg {
       padding: 5rem 2rem 2rem 2rem;
       min-height: 80vh;
-    }
-    .winelist-title {
-      font-size: 2.2rem;
     }
     .winelist-subtitle {
       font-size: 1.1rem;
