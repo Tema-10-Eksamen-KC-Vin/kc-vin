@@ -37,7 +37,6 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
     height: 100%;
     overflow: hidden;
     color: white;
-    min-height: 100vh;
   }
 
   .hero-video-container {
@@ -71,9 +70,9 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items:;
     justify-content: space-between;
-    height: 80vh;
+    gap: 20vh;
+    height: 100%;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -103,6 +102,8 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
 
   .company-title {
     font-size: 1.5rem;
+    min-width: 100%;
+    white-space: nowrap;
   }
 
   .accentfont {
@@ -119,6 +120,10 @@ import logo from "../assets/vektor/kc-bw-logo.svg";
   }
 
   @media (min-width: 768px) {
+    .hero-content {
+      min-height: 90vh;
+      margin-bottom: 100px;
+    }
     .hero-logo {
       width: 300px;
       height: auto;
