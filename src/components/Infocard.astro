@@ -6,7 +6,7 @@ const { svg, text, header, linktext, link } = Astro.props;
   <img src={svg} alt="" />
   <h2>{header}</h2>
   <p>{text}</p>
-  <a href="{link}"><h6>{linktext}</h6></a>
+  <a href="{link}"><h5>{linktext}</h5></a>
 </article>
 
 <style>
@@ -19,11 +19,9 @@ const { svg, text, header, linktext, link } = Astro.props;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    width: 350px;
-    max-width: 350px;
-    min-height: 450px;
+    min-height: 400px;
     margin: auto;
-    gap: 30px;
+    gap: 20px;
     position: relative;
   }
 
@@ -31,17 +29,25 @@ const { svg, text, header, linktext, link } = Astro.props;
     width: 30px;
     height: 30px;
     object-fit: contain;
-    margin-bottom: 20px;
   }
 
   article a:last-of-type {
     margin-top: auto;
   }
 
+  @media (min-width: 600px) {
+    article {
+      width: 400px;
+      max-width: 500px;
+      min-height: 100%;
+    }
+  }
+
   @media (max-width: 600px) {
     article {
       width: 300px;
       max-width: 400px;
+      min-height: 100%;
     }
   }
 </style>
