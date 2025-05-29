@@ -8,10 +8,12 @@ import Udvalgtevine from "../components/Udvalgtevine.astro";
 import Winecard from "../components/Winecard.astro";
 import Productothers from "../components/Productothers.astro";
 import Eventpagecards from "../components/Eventpagecards.astro";
+import eventimg3 from "../assets/event_img3.png";
+import placeholderWine from "../assets/placeholderWine.png";
 ---
 
 <Layout>
-  <Productheader title="Bourgogne aften - Gå på opdagelse i fransk vin" />
+  <Productheader objectfit="cover" img={eventimg3.src} title="Bourgogne aften - Gå på opdagelse i fransk vin" />
   <Eventpagespecifics date="Lørdag d. 5 juli" time="17:00 - 21:00" price="1100" />
   <Productmain bgcolor="beige">
     <Eventpageinfo
@@ -23,10 +25,10 @@ import Eventpagecards from "../components/Eventpagecards.astro";
       pris="1100"
     />
     <Udvalgtevine color="black" title="Udvalgte vine fra eventet">
-      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
-      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
-      <Winecard wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard img={placeholderWine.src} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard img={placeholderWine.src} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
+      <Winecard img={placeholderWine.src} wine="Donna Margherita" subtitle1="Barbera d’Alba DOC" subtitle2="Barbera" desc="Plums, raspberries, blueberries, with some delicate wisteria hints." />
     </Udvalgtevine>
   </Productmain>
-  <Productothers title="Udforsk andre events" subtitle="Læs mere om vores udvalg af vinsmagnings events"><Eventpagecards /></Productothers>
+  <Productothers height="height_event" title="Udforsk andre events" subtitle="Læs mere om vores udvalg af vinsmagnings events"><Eventpagecards /></Productothers>
 </Layout>

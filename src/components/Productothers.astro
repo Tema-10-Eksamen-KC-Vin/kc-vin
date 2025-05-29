@@ -1,9 +1,10 @@
 ---
 const { title } = Astro.props;
 const { subtitle } = Astro.props;
+const { height } = Astro.props;
 ---
 
-<div class="background">
+<div class={`background ${height}`}>
   <div class="overlay">
     <div class="gallery-fade gallery-fade-left"></div>
     <div class="gallery-fade gallery-fade-right"></div>
@@ -26,12 +27,29 @@ const { subtitle } = Astro.props;
   .background {
     background: url(../assets/producent_background.webp);
     background-size: contain;
-    height: auto;
     width: 100%;
-    height: 3200px;
     background-size: cover;
     position: relative;
   }
+
+  .height_product {
+    height: 950px;
+  }
+
+  .height_event {
+    height: 1300px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .height_product {
+      height: 1100px;
+    }
+
+    .height_event {
+      height: 1500px;
+    }
+  }
+
   .overlay {
     position: absolute;
     top: 0;
@@ -44,7 +62,7 @@ const { subtitle } = Astro.props;
 
   .center {
     align-content: center;
-    padding: 0;
+    padding-top: 50px;
   }
 
   .text {
@@ -65,7 +83,7 @@ const { subtitle } = Astro.props;
     overflow-y: hidden;
     padding-bottom: 10px;
     scrollbar-width: none;
-    padding-inline: 4rem;
+    padding-inline: 2rem;
   }
 
   .gallery-fade {
@@ -108,20 +126,12 @@ const { subtitle } = Astro.props;
       width: 100%;
     }
 
-    .background {
-      height: 1500px;
-    }
-
     .flex {
       padding-inline: 0;
     }
   }
 
   @media screen and (max-width: 400px) {
-    .background {
-      height: 3550px;
-    }
-
     .flex {
       padding-inline: 0;
     }
