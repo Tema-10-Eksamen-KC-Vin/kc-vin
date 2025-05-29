@@ -28,7 +28,7 @@ if (error) {
         {
           producers && producers.length > 0 ? (
             producers.map(({ slug, name, description }) => (
-              <a href={`/product/${slug}`} class="read-more">
+              <a href={`/product/${slug}`} class="producerlink">
                 <div class="producer-item">
                   <div class="producer-info">
                     <h3 class="producer-name" title={name}>
@@ -135,18 +135,8 @@ if (error) {
     white-space: pre-wrap;
     max-width: 100%;
   }
-  .read-more {
-    margin-top: 0.8rem;
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.3em;
-    font-size: 1rem;
-    transition: color 0.2s;
-  }
-  .read-more:hover {
+
+  .producerlink:hover {
     color: var(--color-beige);
   }
   .bg-svg {
