@@ -138,16 +138,6 @@ h1 .accentfont {
   color: var(--color-beige);
 }
 
-/* Navbar links */
-
-#mobile-dropdown-button a {
-  font-size: 0.7rem;
-}
-
-.mobile-dropdown-button button {
-  font-size: 0.7rem;
-}
-
 /* Media queries */
 @media (min-width: 768px) {
   .grid-2 {
