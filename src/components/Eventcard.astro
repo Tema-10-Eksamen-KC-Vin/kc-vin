@@ -29,6 +29,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
   .margin {
     margin: 20px 20px 40px 20px;
   }
+
   article {
     background-color: var(--color-red-light);
     border-radius: 7px;
@@ -37,7 +38,14 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
     grid-template-rows: subgrid;
     grid-row: 1 / 7;
     gap: 40px;
-    margin: 50px;
+    margin: 0px;
+    min-width: 350px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    article {
+      margin: 50px;
+    }
   }
 
   h1,
