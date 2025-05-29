@@ -9,7 +9,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
       <p>Tilmeld dig nu og oplev en smagfuld aften, hvor unikke vine præsenteres i de bedste rammer - perfekt til både nysgerrige og mere erfarne vinelskere.</p>
       <form>
         <input type="text" id="email" name="Email" placeholder="Email" />
-        <Udvalgtevinebutton color="ared" linktekst="Tilmeld" />
+        <Udvalgtevinebutton color="ared" linktekst="Tilmeld" class="" />
         <label class="main">
           <input type="checkbox" id="checkbox" />
           <span class="checkbox-container"></span>
@@ -38,6 +38,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
     margin-right: 10px;
     max-height: 25px;
     font-size: 20px;
+    align-self: start;
   }
 
   .main input[type="checkbox"] {
@@ -116,6 +117,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
     grid-template-rows: 2fr 2.5fr;
     gap: 10px;
     padding-top: 24px;
+    align-items: center;
   }
 
   #email {
@@ -126,6 +128,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
     border: solid var(--color-bg-beige);
     border-radius: 5px;
     color: var(--color-white);
+    padding: 16px 0px 16px 8px;
   }
 
   #email::placeholder {
@@ -148,6 +151,7 @@ import Udvalgtevinebutton from "./Udvalgtevinebutton.astro";
     line-height: 150%;
     font-size: 12px;
     font-family: mundial-narrow-variable, sans-serif;
+    align-self: start;
   }
   a {
     text-align: center;
