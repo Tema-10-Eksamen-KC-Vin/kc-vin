@@ -31,7 +31,9 @@ if (error) {
               <a href={`/product/${slug}`} class="read-more">
                 <div class="producer-item">
                   <div class="producer-info">
-                    <h3 class="producer-name">{name}</h3>
+                    <h3 class="producer-name" title={name}>
+                      {name}
+                    </h3>
                     <div class="producer-desc">{description}</div>
                   </div>
                   <div class="read-more">
@@ -59,6 +61,9 @@ if (error) {
 </section>
 
 <style>
+  a {
+    white-space: wrap;
+  }
   section {
     background: var(--color-bg-red);
     padding-block: 4rem 2rem;
@@ -81,7 +86,6 @@ if (error) {
     text-align: center;
     margin-bottom: 0.5rem;
     padding-block: 1.5rem;
-    font-size: 2.25rem;
   }
   .winelist-subtitle {
     text-align: center;
@@ -101,15 +105,20 @@ if (error) {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.2rem;
+    min-width: 0;
   }
   .producer-info {
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
+    max-width: 100%;
   }
   .producer-name {
     font-size: 1.4rem;
     margin-bottom: 0.2rem;
     word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    min-width: 0;
   }
   .producer-name::first-letter {
     font-family: var(--accentfont);
@@ -184,9 +193,14 @@ if (error) {
       align-items: flex-end;
       gap: 2rem;
       padding-bottom: 2rem;
+      min-width: 0;
     }
     .producer-name {
       font-size: 2rem;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+      min-width: 0;
     }
     .producer-name::first-letter {
       font-size: 3.5rem;
@@ -241,9 +255,14 @@ if (error) {
     .producer-item {
       gap: 2.5rem;
       padding-bottom: 2.5rem;
+      min-width: 0;
     }
     .producer-name {
       font-size: 2.5rem;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+      min-width: 0;
     }
     .producer-name::first-letter {
       font-size: 4rem;
