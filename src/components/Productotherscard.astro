@@ -86,6 +86,24 @@ const { data: producers, error } = await supabase.from("Winelist").select("*");
   a:hover {
     color: var(--color-red-light);
   }
+
+  @media (max-width: 600px) {
+    .card {
+      width: 300px;
+      min-width: 300px;
+      max-width: 300px;
+      padding: 1rem;
+      max-height: 550px;
+    }
+    img {
+      width: 100%;
+      max-height: 200px;
+    }
+    .card h4 {
+      min-height: 55px;
+    }
+  }
+
   @media screen and (min-width: 800px) {
     .card {
       max-width: 509px;
