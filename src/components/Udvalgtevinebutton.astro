@@ -15,6 +15,7 @@ const { color = "ared" } = Astro.props;
     border-color: var(--color-bg-beige);
     border-style: solid;
     text-align: center;
+    cursor: pointer;
   }
   .abeige {
     color: var(--color-bg-beige);
@@ -33,6 +34,13 @@ const { color = "ared" } = Astro.props;
     border-color: var(--color-bg-beige);
     border-style: solid;
     text-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .alightred:hover {
+    background-color: var(--color-bg-beige);
+    color: var(--color-red-light);
+    transition: all 0.5s ease-in-out;
   }
   .atransparent {
     color: var(--color-black);
