@@ -7,22 +7,24 @@ import eventimg4 from "../assets/vinsmagning.webp";
 ---
 
 <article>
-  <div class="width">
-    <div class="event-header">
-      <p>Nyheder</p>
-      <h2>Vinsmagninger og andre oplevelser</h2>
-    </div>
-    <p>Til vores vinsmagning får du mulighed for at smage på et nøje udvalgt sortiment af både klassiske og unikke vine. Det bliver en lærerig, hyggelig og smagfuld oplevelse for både nybegyndere og kendere.</p>
-    <div class="content">
-      <div class="categories">
-        <button id="filter">Kun vin</button>
-        <button id="filter">Vin og snacks</button>
-        <button id="filter">Vin og mad</button>
+  <div class="article-grid">
+    <div class="width">
+      <div class="event-header">
+        <p>Nyheder</p>
+        <h2>Vinsmagninger og andre oplevelser</h2>
       </div>
-      <div class="events">
-        <Eventcard color="beige" date="22 juni" header="Hvidvin og Rosé aften på terassen" name1="Maria Kesby" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale hvidvine samt rosévine i solen." eventimg={eventimg1} />
-        <Eventcard date="5 juli" header="Bourgogne aften - Gå på opdagelse i fransk vin" name1="Kasper Kahlenberg" name2="Kahlenberg & Christiansen" text="Oplev specielle vine, med fyldig og kraftige smage, mens vi guider jer gennem historierne fra vingårdene til flaskerne." eventimg={eventimg3} />
-        <Eventcard date="18 august" header="5-retters menu og vinmenu på Søllerød Kro" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Vi inviterer dig til en eksklusiv aften med sublime smagsoplevelser. Kokkene fra Søllerød Kro har sammensat en 5-retters menu med fokus på sæsonens bedste råvarer, og vi har været i vinkælderen og finde noget særligt frem til aftenen." eventimg={eventimg4} />
+      <p>Til vores vinsmagning får du mulighed for at smage på et nøje udvalgt sortiment af både klassiske og unikke vine. Det bliver en lærerig, hyggelig og smagfuld oplevelse for både nybegyndere og kendere.</p>
+      <div class="content">
+        <div class="categories">
+          <button id="filter">Kun vin</button>
+          <button id="filter">Vin og snacks</button>
+          <button id="filter">Vin og mad</button>
+        </div>
+        <div class="events">
+          <Eventcard color="beige" date="22 juni" header="Hvidvin og Rosé aften på terassen" name1="Maria Kesby" name2="Kahlenberg & Christiansen" text="Din næste sommerfavorit venter. Kom og smag, hyg og nyd en masse fænomenale hvidvine samt rosévine i solen." eventimg={eventimg1} />
+          <Eventcard date="5 juli" header="Bourgogne aften - Gå på opdagelse i fransk vin" name1="Kasper Kahlenberg" name2="Kahlenberg & Christiansen" text="Oplev specielle vine, med fyldig og kraftige smage, mens vi guider jer gennem historierne fra vingårdene til flaskerne." eventimg={eventimg3} />
+          <Eventcard date="18 august" header="5-retters menu og vinmenu på Søllerød Kro" name1="Kahlenberg & Christiansen" name2="Søllerød Kro" text="Vi inviterer dig til en eksklusiv aften med sublime smagsoplevelser. Kokkene fra Søllerød Kro har sammensat en 5-retters menu med fokus på sæsonens bedste råvarer, og vi har været i vinkælderen og finde noget særligt frem til aftenen." eventimg={eventimg4} />
+        </div>
       </div>
     </div>
   </div>
@@ -60,8 +62,13 @@ import eventimg4 from "../assets/vinsmagning.webp";
   article {
     background-color: var(--color-bg-red);
     color: var(--color-white);
+  }
+
+  .article-grid {
     padding-bottom: 120px;
-    padding-top: 120px;
+    padding-top: 20px;
+    max-width: 600px;
+    margin: auto;
   }
   button {
     background-color: transparent;
@@ -85,11 +92,17 @@ import eventimg4 from "../assets/vinsmagning.webp";
     gap: 30px;
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1200px) {
     .events {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 40px;
+      gap: 20px;
+    }
+
+    .article-grid {
+      padding-bottom: 120px;
+      max-width: 1200px;
+      margin: auto;
     }
   }
 </style>
