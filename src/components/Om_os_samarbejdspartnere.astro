@@ -1,7 +1,161 @@
 ---
-import OmOsGallery from "./Om_os_gallery.astro";
+import Samarbejdspartenecards from "./Samarbejdspartenecards.astro";
+import image1 from "../assets/Soelleroedkro.webp";
+import image2 from "../assets/espehuskro.webp";
+import image3 from "../assets/svinklov.webp";
+import image4 from "../assets/dyvig.webp";
 ---
 
-<section>
-  <OmOsGallery />
-</section>
+<div class="background height">
+  <div class="center">
+    <div class="text">
+      <h2>Vores samarbejdspartnere</h2>
+    </div>
+    <div class="grid">
+      <div class="gallery-fade gallery-fade-left"></div>
+      <div class="gallery-fade gallery-fade-right"></div>
+      <div class="flex" id="product-flex">
+        <Samarbejdspartenecards name="Søllerød Kro" location="Holte" desc="Tradition, kreativitet og velvære siden 1677" img={image1.src} />
+        <Samarbejdspartenecards name="Espehus Kro" location="Rødovre" desc="En kro i en park. Smørrebrød til frokost og klassisk bistromad om aftenen. Også et vidunderligt sted til bryllupper, julefrokoster og forretningsmøder." img={image2.src} />
+        <Samarbejdspartenecards name="Svinkløv Badehotel" location="Fjerritslev" desc="Velkommen. Vi ligger i bunden af Jammerbugten midt i den smukke Svinkløv klitplantage i yderste klitrække ved Vesterhavet." img={image3.src} />
+        <Samarbejdspartenecards name="Dyvig Badehotel" location="Nordborg" desc="Dyvig Badeho​tel råder over 2 restauranter – vores Dyivg Brasserie og Gourmet restaurant Amstrup&Vigen" img={image4.src} />
+      </div>
+      <div class="scroll-progress-bar">
+        <div class="scroll-progress" id="scroll-progress"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-width: 1300px;
+    margin: auto;
+  }
+  .background {
+    background: var(--color-bg-beige);
+    width: 100%;
+    background-size: cover;
+    height: 800px;
+    position: relative;
+  }
+
+  .height {
+    height: 700px;
+  }
+
+  @media screen and (min-width: 800px) {
+    .height {
+      height: 800px;
+    }
+  }
+
+  .center {
+    align-content: center;
+    padding-top: 50px;
+  }
+
+  .text {
+    padding-block: 2rem;
+    padding-inline: 2rem;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  p {
+    padding-bottom: 40px;
+  }
+  .flex {
+    position: relative;
+    display: grid;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    max-width: 100vw;
+    margin: auto;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    padding-left: 80px;
+  }
+
+  .gallery-fade {
+    z-index: 1000;
+    width: 20px;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 800px) {
+    .flex {
+      max-width: 1300px;
+    }
+    .gallery-fade {
+      z-index: 1000;
+      width: 100px;
+      pointer-events: none;
+    }
+  }
+  .gallery-fade-left {
+    grid-column: 1 /2;
+    grid-row: 1 / 2;
+    background: linear-gradient(to right, var(--color-bg-beige) 0%, transparent 100%);
+  }
+  .gallery-fade-right {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-self: flex-end;
+    background: linear-gradient(to left, var(--color-bg-beige) 0%, transparent 100%);
+  }
+  .scroll-progress-bar {
+    width: 80%;
+    height: 6px;
+    background: #f5f5dc;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+    margin-inline: auto;
+  }
+  .scroll-progress {
+    height: 100%;
+    width: 0%;
+    background: var(--color-red-light);
+    transition: width 0.2s;
+    border-radius: 3px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .center {
+      max-width: 100%;
+      margin: auto;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .flex {
+      padding-inline: 0;
+    }
+  }
+</style>
+
+<script>
+  if (typeof window !== "undefined") {
+    const flex = document.getElementById("product-flex");
+    const progress = document.getElementById("scroll-progress");
+    if (flex && progress) {
+      const updateProgress = () => {
+        const maxScroll = flex.scrollWidth - flex.clientWidth;
+        const percent = maxScroll > 0 ? (flex.scrollLeft / maxScroll) * 100 : 0;
+        progress.style.width = percent + "%";
+      };
+      flex.addEventListener("scroll", updateProgress);
+      window.addEventListener("resize", updateProgress);
+      // Initialize on load
+      updateProgress();
+    }
+  }
+</script>

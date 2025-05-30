@@ -1,11 +1,12 @@
 ---
-const { profilbillede, header, text } = Astro.props;
+const { profilbillede, header, title, text } = Astro.props;
 ---
 
 <article class="profilcard">
   <img src={profilbillede.src} alt=" Profilbillede" loading="lazy" />
   <div class="text">
     <h4>{header}</h4>
+    <h6>{title}</h6>
     <p>{text}</p>
   </div>
 </article>
@@ -21,6 +22,8 @@ const { profilbillede, header, text } = Astro.props;
   .text {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
   }
   img {
     width: 100%;
