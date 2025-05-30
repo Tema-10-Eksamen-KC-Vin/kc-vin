@@ -7,27 +7,34 @@ const svg3 = "/icon/iconlocation.svg";
 ---
 
 <section>
-  <div class="infobody">
-    <div class="infoheading">
-      <h2>Vores information</h2>
-      <p>Find alt du skal bruge for at få fat i os</p>
-    </div>
+  <div class="overlay">
+    <div class="infobody">
+      <div class="infoheading">
+        <h2>Vores information</h2>
+        <p>Find alt du skal bruge for at få fat i os</p>
+      </div>
 
-    <div class="kontaktinfo">
-      <Infocard class="infocard" text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" linktext="info@kahlenbergchristiansen.dk" link="mailto:info@kahlenbergchristiansen.dk" svg={svg1} />
-      <Infocard class="infocard" text=" Har du spørgsmål eller brug for vejledning? Giv os et kald, vi står klar til at hjælpe dig med alt fra bestilling til vinsmagning." header="Telefon" linktext="+45 24 26 43 48" link="tel:+4524264348" svg={svg2} />
-      <Infocard class="infocard" text=" Du finder os i hjertet af Kerteminde, her skaber vi vinoplevelser med passion og omtanke" header="Kontor" linktext="Kohaven 15, 5300 Kerteminde" link="" svg={svg3} />
+      <div class="kontaktinfo">
+        <Infocard class="infocard" text="Vi er altid åbne for nye samarbejder og gode samtaler om vin. Uanset om du leder efter noget specifikt til vinkortet, eller bare er nysgerrig på, hvad vi kan tilbyde, er du meget velkommen til at tage kontakt." header="Email" linktext="info@kahlenbergchristiansen.dk" link="mailto:info@kahlenbergchristiansen.dk" svg={svg1} />
+        <Infocard class="infocard" text=" Har du spørgsmål eller brug for vejledning? Giv os et kald, vi står klar til at hjælpe dig med alt fra bestilling til vinsmagning." header="Telefon" linktext="+45 24 26 43 48" link="tel:+4524264348" svg={svg2} />
+        <Infocard class="infocard" text=" Du finder os i hjertet af Kerteminde, her skaber vi vinoplevelser med passion og omtanke" header="Kontor" linktext="Kohaven 15, 5300 Kerteminde" link="" svg={svg3} />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   section {
-    background-image: url(/src/assets/infocardbaggrund.webp);
+    background-image: url(/src/assets/producent_background.webp);
     background-size: cover;
-    padding: 1rem;
-    padding-block: 4rem;
+    background-position: bottom;
     width: 100%;
+  }
+
+  .overlay {
+    position: relative;
+    background-color: #faedccab;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .infoheading {
@@ -37,6 +44,8 @@ const svg3 = "/icon/iconlocation.svg";
   .infobody {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
+    padding-block: 4rem;
   }
 
   .kontaktinfo {
